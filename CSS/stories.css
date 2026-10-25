@@ -1,0 +1,834 @@
+/*======================================================
+  SOULNEST STORIES & CUTE ROMANTIC LOVE ALBUM STYLING
+======================================================*/
+
+/* Stories Hero */
+.stories-hero {
+    background: radial-gradient(circle at 50% 20%, #fff0f7 0%, #ffffff 70%, #fff5fa 100%);
+    text-align: center;
+    padding: 130px 8% 60px;
+}
+
+.stories-pill-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(255, 94, 168, 0.15), rgba(214, 51, 132, 0.15));
+    color: #d63384;
+    border: 1px solid #ffd2e5;
+    padding: 8px 24px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.08);
+}
+
+.stories-hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.stories-hero h1 span {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stories-hero p {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Category Filter Buttons */
+.stories-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 11px 26px;
+    border: 2px solid #ffd2e5;
+    background: #fff;
+    color: #d63384;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, 
+.filter-btn:hover {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Stories Gallery Grid */
+.stories-gallery {
+    padding: 30px 8% 100px;
+    background: #ffffff;
+}
+
+.stories-gallery .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Story Card */
+.stories-gallery .card {
+    background: #ffffff;
+    border-radius: 26px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ffe6f1;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.stories-gallery .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(214, 51, 132, 0.18);
+    border-color: #ffd2e5;
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.stories-gallery .card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.polaroid-pin {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 24px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    pointer-events: none;
+}
+
+.story-category-tag {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    color: #d63384;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffd2e5;
+    pointer-events: none;
+}
+
+.story-category-tag.recent-tag {
+    color: #11998e;
+    border-color: #c1fada;
+}
+
+.story-card-body {
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.story-card-body h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.story-couple-meta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d63384;
+    margin-bottom: 14px;
+}
+
+.story-excerpt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.read-story-btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: #fff;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 6px 20px rgba(255, 117, 140, 0.35);
+}
+
+.read-story-btn:hover {
+    box-shadow: 0 10px 28px rgba(255, 117, 140, 0.5);
+    transform: translateY(-2px);
+}
+
+/*======================================================
+   ROMANTIC CUTE STORY DETAIL MODAL (POLAROID ALBUM)
+======================================================*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 12, 20, 0.8);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content.cute-story-modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 740px;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 35px 80px rgba(214, 51, 132, 0.3);
+    border: 3px solid #ffe4ec;
+    transform: translateY(35px) scale(0.96);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.show .modal-content.cute-story-modal {
+    transform: translateY(0) scale(1);
+}
+
+.cute-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ffd2e5;
+    font-size: 18px;
+    color: #d63384;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cute-close-btn:hover {
+    transform: rotate(90deg) scale(1.15);
+    background: #d63384;
+    color: #fff;
+}
+
+/* Cute Header Bar */
+.cute-album-header {
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    padding: 32px 30px 22px;
+    text-align: center;
+    border-bottom: 2px dashed #ffd2e5;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cute-badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.cute-pill-stamp {
+    background: #fff;
+    color: #d63384;
+    border: 1px solid #ffd2e5;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 10px rgba(214, 51, 132, 0.08);
+}
+
+.compat-badge-stamp {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(255, 117, 140, 0.3);
+}
+
+.cute-album-header h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.cute-couple-sub {
+    font-size: 14px;
+    font-weight: 600;
+    color: #d63384;
+    margin: 0;
+}
+
+.cute-modal-scroll {
+    padding: 28px 32px;
+    overflow-y: auto;
+    flex: 1;
+    background: #fffdfd;
+}
+
+/*======================================================
+   📸 3-PHOTO POLAROID PHOTO GALLERY
+======================================================*/
+
+.polaroid-album-section {
+    background: #fff8fb;
+    border: 2px dashed #ffd2e5;
+    border-radius: 26px;
+    padding: 22px 20px 20px;
+    margin-bottom: 24px;
+}
+
+.album-heading-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 0 6px;
+}
+
+.album-heading-strip span {
+    font-size: 15px;
+    font-weight: 800;
+    color: #333;
+}
+
+.album-heading-strip small {
+    font-size: 12px;
+    color: #d63384;
+    font-weight: 600;
+}
+
+.polaroid-gallery-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.polaroid-frame {
+    background: #ffffff;
+    padding: 10px 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0d5e2;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.p-frame-1 {
+    transform: rotate(-2.5deg);
+}
+
+.p-frame-2 {
+    transform: translateY(-4px);
+}
+
+.p-frame-3 {
+    transform: rotate(2.5deg);
+}
+
+.polaroid-frame:hover {
+    transform: translateY(-8px) scale(1.05);
+    z-index: 10;
+    box-shadow: 0 18px 35px rgba(214, 51, 132, 0.22);
+}
+
+.polaroid-tape {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 14px;
+    background: rgba(255, 182, 193, 0.7);
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.polaroid-caption {
+    font-size: 11px;
+    font-weight: 700;
+    color: #555;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Cute Milestone Pills */
+.cute-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+    justify-content: center;
+}
+
+.cute-sparkle-pill {
+    background: #fff0f7;
+    color: #d63384;
+    border: 1px solid #ffd2e5;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(214, 51, 132, 0.06);
+}
+
+/* Quick Facts Strip */
+.cute-facts-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.fact-card {
+    background: #ffffff;
+    border: 1px solid #ffe6f1;
+    border-radius: 18px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.fact-icon {
+    font-size: 26px;
+    background: #fff0f7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffd2e5;
+}
+
+.fact-card small {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.fact-card strong {
+    font-size: 15px;
+    color: #222;
+    font-weight: 800;
+}
+
+/* Love Letter & Story Narrative */
+.cute-story-box {
+    background: #fffdfd;
+    border: 2px solid #ffe6f1;
+    border-radius: 22px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.love-letter-stamp {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 24px;
+}
+
+.cute-story-box h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.cute-story-box p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Romantic Quote Bubble */
+.cute-quote-bubble {
+    background: linear-gradient(135deg, #fff0f7, #ffe9f4);
+    border: 1px solid #ffd2e5;
+    border-radius: 22px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.quote-heart-icon {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.cute-quote-bubble h4 {
+    font-size: 13px;
+    color: #d63384;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+}
+
+.cute-quote-bubble p {
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+    line-height: 1.7;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Advice Box */
+.cute-advice-box {
+    background: #e8fdf0;
+    border: 1px solid #c1fada;
+    border-radius: 20px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.advice-sparkle {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.cute-advice-box h4 {
+    font-size: 13px;
+    color: #11998e;
+    font-weight: 800;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.cute-advice-box p {
+    font-size: 13px;
+    color: #2c6e49;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Cute Footer & Heart Shower Button */
+.cute-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 18px;
+    border-top: 1px solid #f0e6ed;
+    flex-wrap: wrap;
+}
+
+.cute-heart-shower-btn {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.35);
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.cute-heart-shower-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 35px rgba(214, 51, 132, 0.45);
+}
+
+.cute-close-footer {
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*======================================================
+   COMPREHENSIVE RESPONSIVE DESIGN (Stories & Modal)
+======================================================*/
+
+/* Large Tablets & Small Laptops (<= 1200px) */
+@media(max-width: 1200px) {
+    .stories-hero {
+        padding: 105px 5% 50px;
+    }
+
+    .stories-gallery {
+        padding: 25px 5% 80px;
+    }
+
+    .stories-gallery .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Medium Tablets & iPads (<= 992px) */
+@media(max-width: 992px) {
+    .stories-hero {
+        padding: 95px 4% 45px;
+    }
+
+    .stories-hero h1 {
+        font-size: 38px;
+    }
+
+    .stories-hero p {
+        font-size: 16px;
+    }
+
+    .stories-filter {
+        gap: 10px;
+        margin: 30px 0 10px;
+    }
+
+    .filter-btn {
+        padding: 9px 20px;
+        font-size: 13px;
+    }
+
+    .cute-modal-content {
+        max-width: 600px;
+        width: 90%;
+    }
+}
+
+/* Small Tablets & Large Phones (<= 768px) */
+@media(max-width: 768px) {
+    .stories-hero {
+        padding: 85px 4% 40px;
+    }
+
+    .stories-hero h1 {
+        font-size: 32px;
+    }
+
+    .stories-gallery {
+        padding: 20px 4% 60px;
+    }
+
+    .stories-gallery .grid-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .card-img-wrapper {
+        height: 260px;
+    }
+
+    .cute-modal-content {
+        width: 94%;
+        max-height: 90vh;
+        max-height: 90dvh;
+        border-radius: 22px;
+    }
+
+    .cute-modal-header {
+        padding: 20px 18px;
+    }
+
+    .cute-modal-header h2 {
+        font-size: 22px;
+    }
+
+    .cute-modal-scroll {
+        padding: 20px 18px;
+    }
+
+    .polaroid-gallery-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .polaroid-frame {
+        transform: none !important;
+        margin: 0 auto;
+        max-width: 320px;
+    }
+
+    .cute-facts-strip {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .cute-modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cute-heart-shower-btn,
+    .cute-close-footer {
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Standard Mobile Phones (<= 576px) */
+@media(max-width: 576px) {
+    .stories-hero {
+        padding: 75px 3% 30px;
+    }
+
+    .stories-pill-tag {
+        font-size: 11px;
+        padding: 6px 16px;
+    }
+
+    .stories-hero h1 {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    .stories-hero p {
+        font-size: 14px;
+    }
+
+    .stories-filter {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .story-card-body {
+        padding: 18px 16px;
+    }
+
+    .story-card-body h3 {
+        font-size: 20px;
+    }
+
+    .story-excerpt {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .read-story-btn {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .cute-advice-box {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+    }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media(max-width: 360px) {
+    .stories-hero h1 {
+        font-size: 22px;
+    }
+
+    .card-img-wrapper {
+        height: 220px;
+    }
+}

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>My Profile Dashboard | SoulNest</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                    window.location.replace('signin.html');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/match.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn active-nav-profile" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="dashboard-container">
+
+                <!-- 1. LOCKED / GUEST NOTICE (Shown if logged out) -->
+                <div class="dashboard-logged-out" id="dash-locked" style="display: none;">
+                    <div class="lock-card" style="margin: 40px auto; max-width: 600px;">
+                        <div class="lock-badge-icon"><i class="ios-emoji">🔒</i></div>
+                        <h2>Profile Dashboard Is Protected</h2>
+                        <p>Please sign in to access your personal dashboard, edit your matrimonial profile, view your shortlisted matches, and manage your partner preferences.</p>
+                        <div class="lock-benefits">
+                            <div><span>✓</span> Manage & update your verified bio & partner criteria</div>
+                            <div><span>✓</span> Track all shortlisted profiles and sent express interests</div>
+                            <div><span>✓</span> 100% privacy and contact protection settings</div>
+                        </div>
+                        <div class="lock-buttons">
+                            <a href="signin.html" class="btn">Sign In to Dashboard</a>
+                            <a href="signup.html" class="btn-secondary">Register New Account</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. LOGGED-IN PROTECTED DASHBOARD -->
+                <div id="dash-protected-area">
+                    
+                    <!-- Priority Profile Completion Alert Banner -->
+                    <div class="profile-complete-alert-banner" id="profile-complete-alert-banner" style="display: none;">
+                        <div class="alert-banner-left">
+                            <div class="alert-banner-icon">⚠️</div>
+                            <div class="alert-banner-text">
+                                <h4>Your Matrimonial Profile is Incomplete (<span id="dash-banner-percent">40%</span> Completed)</h4>
+                                <p>Fill in your education, profession, community, and personal bio to unlock 100% verified match compatibility ratings!</p>
+                            </div>
+                        </div>
+                        <div class="alert-banner-right">
+                            <button class="btn alert-banner-btn" id="btn-banner-complete-profile">
+                                Complete Profile Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dashboard Header Banner Card -->
+                    <div class="dashboard-profile-banner">
+                        <div class="banner-top-accent"></div>
+                        <div class="banner-content-grid">
+                            <!-- Avatar & Quick Info -->
+                            <div class="banner-avatar-column">
+                                <div class="dashboard-avatar-wrap">
+                                    <img id="dash-avatar-img" src="../IMAGES/profile_male1.png" alt="My Profile Photo">
+                                    <button class="avatar-edit-badge" id="btn-change-avatar" title="Change Profile Photo"><i class="ios-emoji">📷</i></button>
+                                    <span class="avatar-verified-badge" title="ID Verified"><i class="ios-emoji">🛡️</i></span>
+                                </div>
+                                <span class="member-id-pill" id="dash-member-id">Member ID: #SN-89241</span>
+                            </div>
+
+                            <!-- Profile Summary Info -->
+                            <div class="banner-info-column">
+                                <div class="banner-name-row">
+                                    <h1 id="dash-user-name">Welcome, Member</h1>
+                                    <span class="status-active-badge">● Active Member</span>
+                                </div>
+                                <p class="banner-job-location" id="dash-job-city">
+                                    <span id="dash-job">Add Profession</span> • <span id="dash-city">Add City</span>
+                                </p>
+
+                                <div class="banner-pills-row">
+                                    <span class="banner-pill" id="dash-pill-age">Add Age & Height</span>
+                                    <span class="banner-pill" id="dash-pill-religion">Add Religion</span>
+                                    <span class="banner-pill" id="dash-pill-edu">Add Education</span>
+                                    <span class="banner-pill" id="dash-pill-diet">Add Diet</span>
+                                </div>
+
+                                <p class="banner-bio-excerpt" id="dash-bio">
+                                    "No bio added yet. Click 'Edit Profile' to introduce yourself and describe your life partner expectations!"
+                                </p>
+                            </div>
+
+                            <!-- Profile Strength Widget -->
+                            <div class="banner-strength-column">
+                                <div class="strength-card">
+                                    <div class="strength-header">
+                                        <h4>Profile Strength</h4>
+                                        <span class="strength-percentage" id="dash-strength-percent">20%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" id="dash-progress-fill" style="width: 20%;"></div>
+                                    </div>
+                                    <p class="strength-tip">Complete your profile details to increase match recommendations!</p>
+                                    <div class="banner-actions-wrap">
+                                        <button class="btn edit-profile-btn" id="btn-open-edit-modal">
+                                            Edit Profile
+                                        </button>
+                                        <a href="match.html" class="btn-secondary view-matches-btn">
+                                            Find Matches
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Stats Strip -->
+                    <div class="dashboard-stats-strip">
+                        <div class="dash-stat-box" id="stat-box-shortlist" style="cursor: pointer;">
+                            <div class="dash-stat-icon" style="background: #fff0f7; color: #d63384;"><i class="ios-emoji">♥</i></div>
+                            <div class="dash-stat-details">
+                                <strong id="dash-stat-shortlist-count">0</strong>
+                                <small>Shortlisted Profiles</small>
+                            </div>
+                        </div>
+
+                        <div class="dash-stat-box" id="stat-box-interests" style="cursor: pointer;">
+                            <div class="dash-stat-icon" style="background: #e8fdf0; color: #11998e;"><i class="ios-emoji">💌</i></div>
+                            <div class="dash-stat-details">
+                                <strong id="dash-stat-interests-count">0</strong>
+                                <small>Interests Expressed</small>
+                            </div>
+                        </div>
+
+                        <div class="dash-stat-box">
+                            <div class="dash-stat-icon" style="background: #f0f4ff; color: #4361ee;"><i class="ios-emoji">👀</i></div>
+                            <div class="dash-stat-details">
+                                <strong>0</strong>
+                                <small>Profile Views This Week</small>
+                            </div>
+                        </div>
+
+                        <div class="dash-stat-box">
+                            <div class="dash-stat-icon" style="background: #fff9e6; color: #f59e0b;"><i class="ios-emoji">🎯</i></div>
+                            <div class="dash-stat-details">
+                                <strong>--</strong>
+                                <small>Compatibility Score</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Main Navigation Tabs -->
+                    <div class="dashboard-tabs-wrapper">
+                        <div class="dashboard-tabs-bar" role="tablist">
+                            <button class="dash-tab active" data-tab="overview" id="tab-dash-overview">
+                                My Profile Details
+                            </button>
+                            <button class="dash-tab" data-tab="preferences" id="tab-dash-preferences">
+                                Partner Preferences
+                            </button>
+                            <button class="dash-tab" data-tab="shortlist" id="tab-dash-shortlist">
+                                Shortlisted Profiles (<span id="tab-shortlist-count-badge">0</span>)
+                            </button>
+                            <button class="dash-tab" data-tab="interests" id="tab-dash-interests">
+                                Interests & Activity (<span id="tab-interests-count-badge">0</span>)
+                            </button>
+                            <button class="dash-tab" data-tab="privacy" id="tab-dash-privacy">
+                                Privacy & Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content Panes -->
+                    <div class="dashboard-tab-content">
+                        
+                        <!-- PANE 1: My Profile Details -->
+                        <div class="dash-pane active" id="pane-overview">
+                            
+                            <!-- Section: Basic & Personal Info -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Basic & Personal Details</h3>
+                                    <button class="btn-sm-edit" id="btn-edit-basic">Edit</button>
+                                </div>
+                                <div class="dash-details-grid">
+                                    <div class="dash-detail-item">
+                                        <label>Full Name</label>
+                                        <p id="disp-fullname">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Gender</label>
+                                        <p id="disp-gender">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Age / Date of Birth</label>
+                                        <p id="disp-age-dob">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Height</label>
+                                        <p id="disp-height">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Marital Status</label>
+                                        <p id="disp-marital">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Mother Tongue</label>
+                                        <p id="disp-mothertongue">Not specified</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Religious & Cultural Details -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Religious & Community Background</h3>
+                                    <button class="btn-sm-edit" id="btn-edit-religion">Edit</button>
+                                </div>
+                                <div class="dash-details-grid">
+                                    <div class="dash-detail-item">
+                                        <label>Religion</label>
+                                        <p id="disp-religion">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Caste / Subcaste</label>
+                                        <p id="disp-caste">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Gotra</label>
+                                        <p id="disp-gotra">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Manglik Status</label>
+                                        <p id="disp-manglik">Not specified</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Career, Education & Location -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Education, Career & Residence</h3>
+                                    <button class="btn-sm-edit" id="btn-edit-career">Edit</button>
+                                </div>
+                                <div class="dash-details-grid">
+                                    <div class="dash-detail-item">
+                                        <label>Highest Qualification</label>
+                                        <p id="disp-edu">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Profession / Occupation</label>
+                                        <p id="disp-profession">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>City of Residence</label>
+                                        <p id="disp-city">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Diet & Lifestyle</label>
+                                        <p id="disp-diet">Not specified</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Lifestyle, Bio & Passions -->
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>About Me & Passions</h3>
+                                    <button class="btn-sm-edit" id="btn-edit-lifestyle">Edit</button>
+                                </div>
+                                <div style="margin-bottom: 20px;">
+                                    <label style="font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase;">About Me Statement</label>
+                                    <p id="disp-bio-full" style="font-size: 15px; color: #444; line-height: 1.6; font-style: italic; background: #fff8fb; padding: 16px; border-radius: 14px; border-left: 4px solid #d63384; margin-top: 8px;">
+                                        "No bio added yet. Click 'Edit Profile' to introduce yourself and describe your life partner expectations!"
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <label style="font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase;">Hobbies & Interests</label>
+                                    <div class="dash-hobbies-wrap" id="disp-hobbies">
+                                        <span style="color: #888; font-size: 14px; font-style: italic;">No hobbies added yet. Click 'Edit Profile' to add your hobbies and passions.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- PANE 2: Partner Preferences -->
+                        <div class="dash-pane" id="pane-preferences">
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Ideal Life Partner Expectations</h3>
+                                    <button class="btn-sm-edit" id="btn-edit-pref">Update Preferences</button>
+                                </div>
+                                <p style="color: #666; font-size: 14px; margin-bottom: 25px;">
+                                    SoulNest uses these preferences to calculate compatibility scores and filter top matches for you.
+                                </p>
+
+                                <div class="dash-details-grid">
+                                    <div class="dash-detail-item">
+                                        <label>Preferred Age Range</label>
+                                        <p id="pref-disp-age">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Preferred Height</label>
+                                        <p id="pref-disp-height">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Religion & Community</label>
+                                        <p id="pref-disp-religion">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Minimum Education</label>
+                                        <p id="pref-disp-edu">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Profession / Work</label>
+                                        <p id="pref-disp-work">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Preferred Location</label>
+                                        <p id="pref-disp-city">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Dietary Preference</label>
+                                        <p id="pref-disp-diet">Not specified</p>
+                                    </div>
+                                    <div class="dash-detail-item">
+                                        <label>Marital Status</label>
+                                        <p id="pref-disp-marital">Not specified</p>
+                                    </div>
+                                </div>
+
+                                <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px dashed #ffd2e5;">
+                                    <a href="match.html" class="btn" style="padding: 13px 34px; border-radius: 50px;">
+                                        Discover Matches Meeting Your Criteria
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PANE 3: Shortlisted Profiles Hub -->
+                        <div class="dash-pane" id="pane-shortlist">
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Your Saved & Shortlisted Profiles</h3>
+                                    <a href="match.html" class="btn-secondary" style="font-size: 13px; padding: 8px 18px; border-radius: 20px;">
+                                        + Browse More Matches
+                                    </a>
+                                </div>
+                                <p style="color: #666; font-size: 14px; margin-bottom: 25px;">
+                                    Review candidates you have bookmarked, express direct interest, or open their full profile.
+                                </p>
+
+                                <!-- Container where shortlisted cards are dynamically rendered -->
+                                <div class="dash-shortlist-grid" id="dash-shortlist-container">
+                                    <!-- Rendered via JS from stored soulNestShortlist -->
+                                </div>
+
+                                <!-- Empty state for shortlist in dashboard -->
+                                <div class="matches-empty-state" id="dash-shortlist-empty" style="display: none;">
+                                    <div class="empty-state-icon"><i class="ios-emoji">💖</i></div>
+                                    <h3>No Shortlisted Profiles Yet</h3>
+                                    <p>You haven't saved any profiles to your shortlist. Explore our verified life partner recommendations and bookmark candidates you like!</p>
+                                    <a href="match.html" class="btn" style="border-radius: 50px; padding: 12px 30px; margin-top: 10px; display: inline-block;">Browse Handpicked Matches</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PANE 4: Interests & Activity -->
+                        <div class="dash-pane" id="pane-interests">
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Sent Express Interests</h3>
+                                    <a href="match.html" class="btn-secondary" style="font-size: 13px; padding: 8px 18px; border-radius: 20px;">
+                                        Discover More Matches
+                                    </a>
+                                </div>
+
+                                <div class="interests-timeline-container" id="dash-interests-container">
+                                    <!-- Rendered dynamically via JS -->
+                                </div>
+
+                                <div class="matches-empty-state" id="dash-interests-empty" style="display: none;">
+                                    <div class="empty-state-icon"><i class="ios-emoji">💌</i></div>
+                                    <h3>No Express Interests Sent Yet</h3>
+                                    <p>Sending interest requests allows you to exchange contact details and initiate conversations with compatible partners.</p>
+                                    <a href="match.html" class="btn" style="border-radius: 50px; padding: 12px 30px; margin-top: 10px; display: inline-block;">Discover Matches Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PANE 5: Privacy & Account Settings -->
+                        <div class="dash-pane" id="pane-privacy">
+                            <div class="dash-card">
+                                <div class="dash-card-header">
+                                    <h3>Privacy, Security & Account Settings</h3>
+                                </div>
+
+                                <form class="privacy-form" id="privacy-settings-form">
+                                    <div class="setting-row">
+                                        <div>
+                                            <strong>Photo Privacy Mode</strong>
+                                            <p style="font-size: 13px; color: #777; margin-bottom: 0;">Control who can view your uploaded photos.</p>
+                                        </div>
+                                        <div>
+                                            <select id="setting-photo-privacy" style="padding: 10px 16px; border-radius: 12px; border: 1px solid #ffd2e5; font-family: inherit;">
+                                                <option value="all">Visible to All Members</option>
+                                                <option value="verified">Verified Members Only</option>
+                                                <option value="protected">Only on Express Request</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-row">
+                                        <div>
+                                            <strong>Contact Number Protection</strong>
+                                            <p style="font-size: 13px; color: #777; margin-bottom: 0;">Show phone number only when mutual interest is accepted.</p>
+                                        </div>
+                                        <div>
+                                            <label class="switch-label">
+                                                <input type="checkbox" id="setting-phone-protect" checked> Protected (Recommended)
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-row">
+                                        <div>
+                                            <strong>Email Notifications & Daily Matches</strong>
+                                            <p style="font-size: 13px; color: #777; margin-bottom: 0;">Receive handpicked compatibility match alerts in your inbox.</p>
+                                        </div>
+                                        <div>
+                                            <label class="switch-label">
+                                                <input type="checkbox" id="setting-email-alerts" checked> Enabled
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+                                        <button type="submit" class="btn" style="padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer;">
+                                             Save Privacy Settings
+                                        </button>
+                                        <a href="logout.html" class="btn-secondary" style="padding: 12px 28px; border-radius: 50px; color: #dc3545; border-color: #f8d7da;">
+                                            Logout of SoulNest
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love and trust.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="match.html">Matches</a></li>
+                    <li><a href="dashboard.html">My Dashboard</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- EDIT PROFILE MODAL -->
+    <div class="modal-overlay" id="edit-profile-modal">
+        <div class="modal-content" style="max-width: 720px;">
+            <div class="modal-header">
+                <button class="modal-close-btn" id="edit-modal-close">&times;</button>
+                <h2>Edit Your Matrimonial Profile</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 0;">Keep your information up to date to receive the most accurate match recommendations.</p>
+            </div>
+            <div class="modal-body">
+                <form id="edit-profile-form">
+                    
+                    <h4 class="form-section-title">1. Basic Details</h4>
+                    <div class="modal-form-grid">
+                        <div class="form-group">
+                            <label for="input-edit-name">Full Name</label>
+                            <input type="text" id="input-edit-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-gender">Gender</label>
+                            <select id="input-edit-gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-dob">Date of Birth</label>
+                            <input type="date" id="input-edit-dob">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-age">Age (Years)</label>
+                            <input type="number" id="input-edit-age" min="18" max="100" placeholder="Auto-calculated from DOB">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-height">Height</label>
+                            <input type="text" id="input-edit-height" placeholder="e.g. 5'9&quot;">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-marital">Marital Status</label>
+                            <select id="input-edit-marital">
+                                <option value="Never Married">Never Married</option>
+                                <option value="Divorced">Divorced</option>
+                                <option value="Awaiting Divorce">Awaiting Divorce</option>
+                                <option value="Widowed">Widowed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-mothertongue">Mother Tongue</label>
+                            <input type="text" id="input-edit-mothertongue" placeholder="e.g. Hindi, Punjabi, Bengali">
+                        </div>
+                    </div>
+
+                    <h4 class="form-section-title">2. Religion & Community</h4>
+                    <div class="modal-form-grid">
+                        <div class="form-group">
+                            <label for="input-edit-religion">Religion</label>
+                            <select id="input-edit-religion">
+                                <option value="Hindu">Hindu</option>
+                                <option value="Muslim">Muslim</option>
+                                <option value="Sikh">Sikh</option>
+                                <option value="Christian">Christian</option>
+                                <option value="Jain">Jain</option>
+                                <option value="Buddhist">Buddhist</option>
+                                <option value="Parsi">Parsi</option>
+                                <option value="Jewish">Jewish</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-caste">Caste / Subcaste</label>
+                            <input type="text" id="input-edit-caste" placeholder="e.g. Khatri, Brahmin, Rajput, Agarwal">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-gotra">Gotra</label>
+                            <input type="text" id="input-edit-gotra" placeholder="e.g. Kashyap, Vashishta, Kaushik">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-manglik">Manglik Status</label>
+                            <select id="input-edit-manglik">
+                                <option value="Non-Manglik">Non-Manglik</option>
+                                <option value="Manglik">Manglik</option>
+                                <option value="Anshik Manglik (Partial)">Anshik Manglik (Partial)</option>
+                                <option value="Don't Know">Don't Know</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="form-section-title">3. Education, Work & Residence</h4>
+                    <div class="modal-form-grid">
+                        <div class="form-group">
+                            <label for="input-edit-edu">Highest Degree</label>
+                            <input type="text" id="input-edit-edu" placeholder="e.g. B.Tech, MBA, MBBS">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-job">Profession / Role</label>
+                            <input type="text" id="input-edit-job" placeholder="e.g. Lead Product Manager">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-city">Current City</label>
+                            <input type="text" id="input-edit-city" placeholder="e.g. New Delhi, Gurugram, Mumbai">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-edit-diet">Dietary Habit</label>
+                            <select id="input-edit-diet">
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                                <option value="Eggetarian">Eggetarian</option>
+                                <option value="Vegan">Vegan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="form-section-title">4. About Yourself, Hobbies & Life Goals</h4>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="input-edit-bio">Personal Bio / Statement</label>
+                        <textarea id="input-edit-bio" rows="3" placeholder="Tell potential matches about your personality, family, and relationship goals..." style="width: 100%; padding: 12px; border-radius: 14px; border: 2px solid #ede4eb; font-family: inherit; font-size: 14px; outline: none;"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="input-edit-hobbies">Hobbies & Interests (Comma Separated)</label>
+                        <input type="text" id="input-edit-hobbies" placeholder="e.g. Traveling, Reading, Music, Fitness, Cooking, Photography">
+                        <small style="color: #777; font-size: 12px; margin-top: 4px; display: block;">Separate your hobbies with commas (e.g. Traveling, Fitness, Reading, Cooking)</small>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn" style="padding: 13px 36px; border: none; cursor: pointer;">
+                            Save Profile Changes
+                        </button>
+                        <button type="button" class="btn-secondary" id="edit-modal-cancel" style="padding: 13px 25px; border-radius: 50px; cursor: pointer;">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVATAR / PHOTO PICKER MODAL -->
+    <div class="modal-overlay" id="avatar-modal">
+        <div class="modal-content" style="max-width: 520px;">
+            <div class="modal-header">
+                <button class="modal-close-btn" id="avatar-modal-close">&times;</button>
+                <h2>Choose Profile Photo</h2>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Select from verified portrait presets or upload your photo:</p>
+                
+                <div class="avatar-presets-grid">
+                    <img src="../IMAGES/profile_male1.png" class="preset-avatar" data-src="../IMAGES/profile_male1.png" alt="Male 1">
+                    <img src="../IMAGES/profile_male2.png" class="preset-avatar" data-src="../IMAGES/profile_male2.png" alt="Male 2">
+                    <img src="../IMAGES/profile_female1.png" class="preset-avatar" data-src="../IMAGES/profile_female1.png" alt="Female 1">
+                    <img src="../IMAGES/profile_female2.png" class="preset-avatar" data-src="../IMAGES/profile_female2.png" alt="Female 2">
+                    <img src="../IMAGES/couple2.png" class="preset-avatar" data-src="../IMAGES/couple2.png" alt="Couple 2">
+                    <img src="../IMAGES/couple7.png" class="preset-avatar" data-src="../IMAGES/couple7.png" alt="Couple 7">
+                </div>
+
+                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #ffd2e5;">
+                    <label class="btn-secondary" style="cursor: pointer; display: inline-block; padding: 10px 24px; border-radius: 50px; font-size: 14px;">
+                        Upload from Device
+                        <input type="file" id="custom-photo-upload" accept="image/*" style="display: none;">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate Detail Modal (For shortlisted profiles in Dashboard) -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close-btn" id="modal-close">&times;</button>
+                <div class="modal-avatar-container">
+                    <img id="modal-img" src="../IMAGES/profile_female1.png" alt="Candidate Photo">
+                    <span class="verified-badge-icon" style="position: absolute; bottom: 5px; right: 5px; width: 32px; height: 32px; font-size: 16px;"><i class="ios-emoji">🛡️</i></span>
+                </div>
+                <h2 id="modal-name">Candidate Name</h2>
+                <span class="match-badge compat" id="modal-badge">98% Compatibility</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>Age & Height</h4>
+                        <p id="modal-age-height">25 Years • 5'5"</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Religion & Community</h4>
+                        <p id="modal-religion">Hindu (Bhardwaj)</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Profession & Career</h4>
+                        <p id="modal-job">Senior Software Engineer</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Highest Education</h4>
+                        <p id="modal-edu">B.Tech / MBA</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Current Residence</h4>
+                        <p id="modal-city">Gurugram, India</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Diet & Lifestyle</h4>
+                        <p id="modal-diet">Vegetarian • Non-Smoker</p>
+                    </div>
+                </div>
+
+                <div class="modal-about-box">
+                    <h4>About Candidate</h4>
+                    <p id="modal-bio">Candidate Bio</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn" id="modal-connect-action" style="padding: 13px 28px; font-size: 15px; border: none; cursor: pointer;">
+                        Send Express Interest
+                    </button>
+                    <button class="btn-secondary" id="modal-shortlist-action" style="padding: 13px 24px; font-size: 15px; border-radius: 50px; cursor: pointer;">
+                        Shortlist Profile
+                    </button>
+                    <button class="btn-secondary" id="modal-close-footer" style="padding: 13px 24px; font-size: 15px; border-radius: 50px; cursor: pointer;">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIORITY "COMPLETE YOUR PROFILE" POPUP NOTIFICATION MODAL -->
+    <div class="modal-overlay" id="complete-profile-prompt-modal">
+        <div class="modal-content complete-profile-modal-card">
+            <div class="modal-header complete-profile-header">
+                <button class="modal-close-btn" id="complete-profile-prompt-close" aria-label="Close modal">&times;</button>
+                <div class="complete-profile-badge-icon">
+                    <span class="brand-heart">♥</span>
+                </div>
+                <h2>Complete Your Profile</h2>
+                <p>Profiles with 100% completed details receive up to <strong>8x more match responses</strong> and verified profile credibility!</p>
+            </div>
+            <div class="modal-body complete-profile-body">
+                <!-- Progress Indicator -->
+                <div class="complete-progress-wrapper">
+                    <div class="complete-progress-header">
+                        <span class="progress-label">Profile Strength:</span>
+                        <strong class="progress-percent" id="complete-prompt-percent">35% Completed</strong>
+                    </div>
+                    <div class="complete-progress-bar-bg">
+                        <div class="complete-progress-bar-fill" id="complete-prompt-bar" style="width: 35%;"></div>
+                    </div>
+                </div>
+
+                <!-- Missing Details Checklist -->
+                <h4 class="complete-checklist-title">Priority Details Checklist:</h4>
+                <div class="complete-checklist-grid" id="complete-checklist-grid">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <div class="complete-prompt-actions">
+                    <button class="btn" id="btn-prompt-fill-now">
+                        ✨ Complete Profile Details Now
+                    </button>
+                    <button class="btn-secondary" id="btn-prompt-fill-later">
+                        Remind Me Later
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta http-equiv="refresh" content="3;url=index.html">
+<link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+<title>SoulNest Loading</title>
+<script>
+    (function() {
+        try {
+            var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme !== 'light') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        } catch(e) {}
+    })();
+</script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body{
+    height:100vh;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0c0e17;
+    overflow:hidden;
+    padding:20px;
+    transition: background 0.3s ease;
+}
+
+html[data-theme="light"] body {
+    background:linear-gradient(135deg,#fff1f7,#ffd9eb);
+}
+
+.container{
+    text-align:center;
+    width:100%;
+    max-width:400px;
+}
+
+.heart{
+    font-size:60px;
+    color:#ff5ea8;
+    text-shadow: 0 0 25px rgba(255, 94, 168, 0.6);
+    animation:beat 1s infinite;
+    display: inline-block;
+}
+
+.loading-text{
+    margin-top:15px;
+    font-size:22px;
+    color:#f8fafc;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+html[data-theme="light"] .loading-text {
+    color:#d63384;
+}
+
+.progress{
+    width:100%;
+    max-width:320px;
+    height:14px;
+    background:#1a1e30;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius:30px;
+    overflow:hidden;
+    margin:30px auto 20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
+}
+
+html[data-theme="light"] .progress {
+    background:#fff;
+    border: none;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.bar{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#ff5ea8,#d63384);
+    animation:load 3s linear forwards;
+}
+
+.logo{
+    font-size:36px;
+    color:#ff75a0;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+html[data-theme="light"] .logo {
+    color:#d63384;
+}
+
+.tagline{
+    color:#94a3b8;
+    margin-top:8px;
+    font-size:15px;
+}
+
+html[data-theme="light"] .tagline {
+    color:#666;
+}
+
+@keyframes load{
+    from{width:0;}
+    to{width:100%;}
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+@media(max-width: 480px) {
+    .heart {
+        font-size: 48px;
+    }
+    .loading-text {
+        font-size: 18px;
+    }
+    .logo {
+        font-size: 28px;
+    }
+    .tagline {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="heart">♥</div>
+    <div class="loading-text">Loading...</div>
+    <div class="progress">
+        <div class="bar"></div>
+    </div>
+    <div class="logo">SoulNest</div>
+    <div class="tagline">Where Hearts Find Home</div>
+</div>
+</body>
+</html>

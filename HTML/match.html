@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Your Recommended Matches | SoulNest</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/match.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html" class="active-nav">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic"
+                            id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Matches Section -->
+        <section class="matches-section">
+            <!-- Hero Header -->
+            <div class="matches-hero-header">
+                <span class="matches-pill-tag">HANDPICKED COMPATIBILITY</span>
+                <h1>Discover Your <span>Ideal Life Partner</span></h1>
+                <p class="section-subtitle">
+                    Connect with thoroughly verified matrimonial candidates filtered by profession, culture, lifestyle, and mutual interests.
+                </p>
+
+                <!-- Stats Strip -->
+                <div class="match-stats-strip">
+                    <div class="match-stat-item">
+                        <span class="stat-icon"><i class="ios-emoji">🛡️</i></span>
+                        <div>
+                            <strong>100% Verified</strong>
+                            <small>Govt ID & Photo Checked</small>
+                        </div>
+                    </div>
+                    <div class="match-stat-divider"></div>
+                    <div class="match-stat-item">
+                        <span class="stat-icon"><i class="ios-emoji">✨</i></span>
+                        <div>
+                            <strong>AI Smart Match</strong>
+                            <small>98% Compatibility Score</small>
+                        </div>
+                    </div>
+                    <div class="match-stat-divider"></div>
+                    <div class="match-stat-item">
+                        <span class="stat-icon"><i class="ios-emoji">🔒</i></span>
+                        <div>
+                            <strong>Privacy Shield</strong>
+                            <small>Member Contact Protection</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches-container">
+
+                <!-- 1. LOCKED STATE (Displayed when user is not signed in) -->
+                <div class="matches-logged-out" id="matches-locked">
+                    <div class="matches-blur-grid">
+                        <div class="preview-card">
+                            <div class="card-badge-top">98% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_1_aishwarya.jpg"
+                                    alt="Profile"></div>
+                            <h3>Aishwarya S.</h3>
+                            <p class="preview-sub">25 Yrs • Gurugram</p>
+                            <p class="preview-meta">Senior Software Engineer</p>
+                        </div>
+                        <div class="preview-card">
+                            <div class="card-badge-top">96% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_2_rahul.jpg" alt="Profile">
+                            </div>
+                            <h3>Rahul M.</h3>
+                            <p class="preview-sub">28 Yrs • Mumbai</p>
+                            <p class="preview-meta">Lead Product Manager</p>
+                        </div>
+                        <div class="preview-card">
+                            <div class="card-badge-top">95% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_3_priya.jpg" alt="Profile">
+                            </div>
+                            <h3>Priya P.</h3>
+                            <p class="preview-sub">26 Yrs • Delhi</p>
+                            <p class="preview-meta">UX/UI Design Lead</p>
+                        </div>
+                        <div class="preview-card">
+                            <div class="card-badge-top">92% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_4_kabir.jpg" alt="Profile">
+                            </div>
+                            <h3>Kabir S.</h3>
+                            <p class="preview-sub">29 Yrs • Bengaluru</p>
+                            <p class="preview-meta">Data Science Consultant</p>
+                        </div>
+                        <div class="preview-card">
+                            <div class="card-badge-top">97% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_7_ananya.jpg" alt="Profile">
+                            </div>
+                            <h3>Ananya V.</h3>
+                            <p class="preview-sub">27 Yrs • Chandigarh</p>
+                            <p class="preview-meta">Pediatric Doctor (MD)</p>
+                        </div>
+                        <div class="preview-card">
+                            <div class="card-badge-top">94% Match</div>
+                            <div class="preview-img-wrap"><img src="../IMAGES/ai_matches/match_8_rohan.jpg" alt="Profile">
+                            </div>
+                            <h3>Rohan M.</h3>
+                            <p class="preview-sub">29 Yrs • Pune</p>
+                            <p class="preview-meta">Marketing Director</p>
+                        </div>
+                    </div>
+
+                    <!-- Frosted Glass Lock Overlay -->
+                    <div class="lock-overlay">
+                        <div class="lock-card">
+                            <div class="lock-badge-icon"><span class="ios-emoji">🔒</span></div>
+                            <span class="lock-pill-tag">MEMBER EXCLUSIVE AREA</span>
+                            <h2>Personalized Matches Are Protected</h2>
+                            <p>To ensure 100% member privacy, genuine photo security, and verified matchmaking,
+                                recommended profiles are accessible only to registered SoulNest members.</p>
+
+                            <div class="lock-benefits">
+                                <div class="lock-benefit-item"><span>✓</span> 100+ Handpicked Profiles</div>
+                                <div class="lock-benefit-item"><span>✓</span> Direct Express Interest</div>
+                                <div class="lock-benefit-item"><span>✓</span> Age, Work & City Filters</div>
+                                <div class="lock-benefit-item"><span>✓</span> 100% Safe & Confidential</div>
+                            </div>
+
+                            <div class="lock-buttons">
+                                <a href="signin.html" class="btn lock-btn-primary">Sign In to View Matches ➔</a>
+                                <a href="signup.html" class="btn-secondary lock-btn-secondary">Register Free Account</a>
+                            </div>
+
+                            <p class="lock-trust-note">Free registration • 100% Verified Profiles • Strict Privacy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. LOGGED-IN PROTECTED AREA (Filter Hub & 12 Active Matches) -->
+                <div id="matches-protected-area" style="display: none;">
+
+                    <!-- View Mode Navigation Segmented Bar (All Matches / Shortlisted / Selected Interests) -->
+                    <div class="matches-view-tabs-container">
+                        <div class="matches-view-tabs" role="tablist">
+                            <button class="view-tab active" data-view="all" id="tab-all" role="tab"
+                                aria-selected="true">
+                                <span class="tab-icon"><i class="ios-emoji">✨</i></span>
+                                <span class="tab-text">All Recommendations</span>
+                                <span class="tab-badge" id="badge-all-count">12</span>
+                            </button>
+                            <button class="view-tab" data-view="shortlist" id="tab-shortlist" role="tab"
+                                aria-selected="false">
+                                <span class="tab-icon"><i class="ios-emoji">♥</i></span>
+                                <span class="tab-text">Shortlisted Profiles</span>
+                                <span class="tab-badge" id="badge-shortlist-count">0</span>
+                            </button>
+                            <button class="view-tab" data-view="interests" id="tab-interests" role="tab"
+                                aria-selected="false">
+                                <span class="tab-icon"><i class="ios-emoji">💌</i></span>
+                                <span class="tab-text">Interests Sent</span>
+                                <span class="tab-badge" id="badge-interests-count">0</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Control Hub -->
+                    <div class="matches-filter-hub">
+                        <div class="filter-top-row">
+                            <div class="search-input-wrapper">
+                                <span class="search-icon">🔍</span>
+                                <input type="text" id="filter-search"
+                                    placeholder="Search by name, profession, hobby, or city...">
+                            </div>
+                            <div class="results-badge-wrap">
+                                <span class="results-counter" id="results-count">Showing 12 Verified Matches</span>
+                            </div>
+                        </div>
+
+                        <!-- Comprehensive Filter Dropdowns Grid -->
+                        <div class="filter-controls-grid">
+                            <!-- 1. Gender -->
+                            <div class="filter-control">
+                                <label for="filter-gender">Profile For</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-gender">
+                                        <option value="all">All Profiles</option>
+                                        <option value="female">Women</option>
+                                        <option value="male">Men</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 2. Age Range -->
+                            <div class="filter-control">
+                                <label for="filter-age">Age Range</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-age">
+                                        <option value="all">All Ages</option>
+                                        <option value="24-26">24 to 26 Years</option>
+                                        <option value="27-29">27 to 29 Years</option>
+                                        <option value="30-plus">30+ Years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 3. Work / Profession -->
+                            <div class="filter-control">
+                                <label for="filter-work">Profession / Work</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-work">
+                                        <option value="all">All Professions</option>
+                                        <option value="tech">Software & Tech</option>
+                                        <option value="product-design">Product & UI/UX Design</option>
+                                        <option value="doctor">Medical & Healthcare</option>
+                                        <option value="finance">Finance & CA</option>
+                                        <option value="creative">Architecture & Fashion</option>
+                                        <option value="marketing">Marketing & Management</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 4. Education / Degree -->
+                            <div class="filter-control">
+                                <label for="filter-edu">Education</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-edu">
+                                        <option value="all">All Degrees</option>
+                                        <option value="btech-ms">Engineering (B.Tech / MS)</option>
+                                        <option value="mba">MBA / Management</option>
+                                        <option value="medical">Medical (MBBS / MD)</option>
+                                        <option value="ca">CA / Finance</option>
+                                        <option value="other">Design & Architecture</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 5. Religion / Community -->
+                            <div class="filter-control">
+                                <label for="filter-religion">Religion</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-religion">
+                                        <option value="all">All Religions</option>
+                                        <option value="hindu">Hindu</option>
+                                        <option value="muslim">Muslim</option>
+                                        <option value="sikh">Sikh</option>
+                                        <option value="christian">Christian</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 6. City / Location -->
+                            <div class="filter-control">
+                                <label for="filter-city">City</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-city">
+                                        <option value="all">All Cities</option>
+                                        <option value="gurugram">Gurugram</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="bengaluru">Bengaluru</option>
+                                        <option value="chandigarh">Chandigarh</option>
+                                        <option value="pune">Pune</option>
+                                        <option value="jaipur">Jaipur</option>
+                                        <option value="hyderabad">Hyderabad</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 7. Diet & Lifestyle -->
+                            <div class="filter-control">
+                                <label for="filter-diet">Diet / Lifestyle</label>
+                                <div class="custom-select-wrap">
+                                    <select id="filter-diet">
+                                        <option value="all">All Lifestyles</option>
+                                        <option value="veg">Vegetarian</option>
+                                        <option value="non-veg">Non-Vegetarian</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 8. Reset Button -->
+                            <div class="filter-control" style="display: flex; align-items: flex-end;">
+                                <button id="reset-filters-btn" class="btn-secondary"
+                                    style="width: 100%; padding: 13px; font-size: 14px; border-radius: 14px; text-align: center;">
+                                    Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pure Semantic HTML Matches Grid -->
+                    <div class="matches-grid" id="matches-grid">
+
+                        <!-- Card 1: Aishwarya Sharma -->
+                        <div class="match-card" id="match-card-1" data-id="1" data-gender="female" data-religion="hindu"
+                            data-city="gurugram" data-age="25" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">98% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_1_aishwarya.jpg" alt="Aishwarya Sharma">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Aishwarya Sharma</h3>
+                                <p class="match-meta-job">Senior Software Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Hindu (Bhardwaj)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Passionate about classical music, technology, and
+                                    building a balanced, happy home together."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Rahul Malhotra -->
+                        <div class="match-card" id="match-card-2" data-id="2" data-gender="male" data-religion="hindu"
+                            data-city="mumbai" data-age="28" data-work="product-design" data-edu="mba" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_2_rahul.jpg" alt="Rahul Malhotra">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Rahul Malhotra</h3>
+                                <p class="match-meta-job">Lead Product Manager</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Hindu (Kashyap)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Looking for an understanding life partner who loves
+                                    traveling, family gatherings, and good conversation."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Priya Patel -->
+                        <div class="match-card" id="match-card-3" data-id="3" data-gender="female" data-religion="hindu"
+                            data-city="delhi" data-age="26" data-work="product-design" data-edu="other" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_3_priya.jpg" alt="Priya Patel">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Priya Patel</h3>
+                                <p class="match-meta-job">UX/UI Design Lead</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'4"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Hindu (Vats)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Creative enthusiast who loves art galleries, weekend
+                                    baking, and simple, authentic moments."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Kabir Singh -->
+                        <div class="match-card" id="match-card-4" data-id="4" data-gender="male" data-religion="sikh"
+                            data-city="bengaluru" data-age="29" data-work="tech" data-edu="btech-ms"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">92% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_4_kabir.jpg" alt="Kabir Singh">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Kabir Singh</h3>
+                                <p class="match-meta-job">Data Science Consultant</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 6'0"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Sikh (Grewal)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Down-to-earth tech professional seeking a caring,
+                                    ambitious companion with strong family values."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Zara Khan -->
+                        <div class="match-card" id="match-card-5" data-id="5" data-gender="female"
+                            data-religion="muslim" data-city="mumbai" data-age="27" data-work="finance" data-edu="ca"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">90% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_5_zara.jpg" alt="Zara Khan">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Zara Khan</h3>
+                                <p class="match-meta-job">Chartered Accountant (CA)</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Muslim (Sunni)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Ambitious professional who values mutual respect,
+                                    intellectual conversations, and good food."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Vikram Fernandes -->
+                        <div class="match-card" id="match-card-6" data-id="6" data-gender="male"
+                            data-religion="christian" data-city="gurugram" data-age="30" data-work="creative"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">89% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_6_vikram.jpg" alt="Vikram Fernandes">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Vikram Fernandes</h3>
+                                <p class="match-meta-job">Architect & Urban Planner</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">30 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Christian (Catholic)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Enthusiast of heritage architecture, hiking, and finding
+                                    joy in life's simple everyday moments."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: Ananya Verma -->
+                        <div class="match-card" id="match-card-7" data-id="7" data-gender="female" data-religion="hindu"
+                            data-city="chandigarh" data-age="27" data-work="doctor" data-edu="medical" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">97% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_7_ananya.jpg" alt="Ananya Verma">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Ananya Verma</h3>
+                                <p class="match-meta-job">Pediatric Doctor (MBBS, MD)</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Chandigarh</span>
+                                    <span class="match-info-pill">Hindu (Shandilya)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Dedicated healthcare professional who believes in
+                                    compassion, fitness, and living life with optimism."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Rohan Mehta -->
+                        <div class="match-card" id="match-card-8" data-id="8" data-gender="male" data-religion="hindu"
+                            data-city="pune" data-age="29" data-work="marketing" data-edu="mba" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_8_rohan.jpg" alt="Rohan Mehta">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Rohan Mehta</h3>
+                                <p class="match-meta-job">Marketing Director</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Pune</span>
+                                    <span class="match-info-pill">Hindu (Jain)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Dynamic marketing strategist who loves photography, road
+                                    trips, and building long-lasting bonds."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 9: Jaspreet Kaur -->
+                        <div class="match-card" id="match-card-9" data-id="9" data-gender="female" data-religion="sikh"
+                            data-city="delhi" data-age="26" data-work="creative" data-edu="other" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_9_jaspreet.jpg" alt="Jaspreet Kaur">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Jaspreet Kaur</h3>
+                                <p class="match-meta-job">Fashion & Brand Consultant</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'7"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Sikh (Gill)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Energetic, creative spirit who loves traveling,
+                                    traditional cuisine, and modern design aesthetics."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 10: Aditya Sengupta -->
+                        <div class="match-card" id="match-card-10" data-id="10" data-gender="male" data-religion="hindu"
+                            data-city="bengaluru" data-age="31" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">91% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_10_aditya.jpg" alt="Aditya Sengupta">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Aditya Sengupta</h3>
+                                <p class="match-meta-job">AI Research Scientist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">31 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Researcher at heart who enjoys science podcasts,
+                                    classical guitar, and peaceful mountain treks."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 11: Sneha Rao -->
+                        <div class="match-card" id="match-card-11" data-id="11" data-gender="female"
+                            data-religion="hindu" data-city="hyderabad" data-age="26" data-work="finance" data-edu="ca"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_11_sneha.jpg" alt="Sneha Rao">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Sneha Rao</h3>
+                                <p class="match-meta-job">Financial Risk Analyst</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Hindu (Reddy)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Looking for an honest, ambitious companion who cherishes
+                                    simple pleasures and mutual growth."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 12: Harshvardhan Rathore -->
+                        <div class="match-card" id="match-card-12" data-id="12" data-gender="male" data-religion="hindu"
+                            data-city="jaipur" data-age="29" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">88% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_12_harshvardhan.jpg" alt="Harshvardhan Rathore">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Harshvardhan Rathore</h3>
+                                <p class="match-meta-job">Civil & Structural Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 6'1"</span>
+                                    <span class="match-info-pill">Jaipur</span>
+                                    <span class="match-info-pill">Hindu (Rajput)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Values tradition, integrity, and good humor. Looking
+                                    forward to starting a wonderful new chapter."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 13: Tanvi Joshi -->
+                        <div class="match-card" id="match-card-13" data-id="13" data-gender="female"
+                            data-religion="hindu" data-city="pune" data-age="25" data-work="tech" data-edu="btech-ms"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_13_tanvi.jpg" alt="Tanvi Joshi">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Tanvi Joshi</h3>
+                                <p class="match-meta-job">Cloud Solutions Architect</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'4"</span>
+                                    <span class="match-info-pill">Pune</span>
+                                    <span class="match-info-pill">Hindu (Deshastha)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Tech lover who enjoys indie coffee shops, yoga weekends,
+                                    and soulful conversations."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 14: Kunal Kapoor -->
+                        <div class="match-card" id="match-card-14" data-id="14" data-gender="male" data-religion="hindu"
+                            data-city="delhi" data-age="28" data-work="finance" data-edu="mba" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_14_kunal.jpg" alt="Kunal Kapoor">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Kunal Kapoor</h3>
+                                <p class="match-meta-job">Investment Banker</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Hindu (Khatri)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Finance professional with an adventurous spirit. Seeking
+                                    an independent, loving life partner."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 15: Meera Nambiar -->
+                        <div class="match-card" id="match-card-15" data-id="15" data-gender="female"
+                            data-religion="hindu" data-city="bengaluru" data-age="27" data-work="doctor"
+                            data-edu="medical" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_15_meera.jpg" alt="Meera Nambiar">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Meera Nambiar</h3>
+                                <p class="match-meta-job">Orthodontist & Dental Surgeon</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Nair)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Passionate about healthcare, classical dance, and
+                                    exploring new culinary experiences."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 16: Arjun Deshmukh -->
+                        <div class="match-card" id="match-card-16" data-id="16" data-gender="male" data-religion="hindu"
+                            data-city="mumbai" data-age="30" data-work="creative" data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">91% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_16_arjun.jpg" alt="Arjun Deshmukh">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Arjun Deshmukh</h3>
+                                <p class="match-meta-job">Senior Interior Architect</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">30 Yrs • 6'0"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Hindu (Maratha)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Designer by profession, wanderer by heart. Looking for
+                                    someone grounded with a zest for life."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 17: Diya Chatterjee -->
+                        <div class="match-card" id="match-card-17" data-id="17" data-gender="female"
+                            data-religion="hindu" data-city="bengaluru" data-age="26" data-work="product-design"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_17_diya.jpg" alt="Diya Chatterjee">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Diya Chatterjee</h3>
+                                <p class="match-meta-job">Senior Product Designer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'3"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Passionate about user experience design, acoustic music,
+                                    and soulful travel stories."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 18: Siddharth Nair -->
+                        <div class="match-card" id="match-card-18" data-id="18" data-gender="male" data-religion="hindu"
+                            data-city="hyderabad" data-age="29" data-work="tech" data-edu="btech-ms"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">92% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_18_siddharth.jpg" alt="Siddharth Nair">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Siddharth Nair</h3>
+                                <p class="match-meta-job">Principal DevOps Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Hindu (Menon)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Tech enthusiast who enjoys fitness, weekend marathons,
+                                    and building strong family bonds."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 19: Riya Singhania -->
+                        <div class="match-card" id="match-card-19" data-id="19" data-gender="female"
+                            data-religion="hindu" data-city="jaipur" data-age="25" data-work="finance" data-edu="ca"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">97% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_19_riya.jpg" alt="Riya Singhania">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Riya Singhania</h3>
+                                <p class="match-meta-job">Corporate Finance Lead</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Jaipur</span>
+                                    <span class="match-info-pill">Hindu (Agarwal)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Detail-oriented finance specialist seeking a warm,
+                                    supportive partner with shared family values."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 20: Farhan Qureshi -->
+                        <div class="match-card" id="match-card-20" data-id="20" data-gender="male"
+                            data-religion="muslim" data-city="delhi" data-age="31" data-work="doctor" data-edu="medical"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">90% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_20_farhan.jpg" alt="Farhan Qureshi">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Farhan Qureshi</h3>
+                                <p class="match-meta-job">Orthopedic Surgeon (MS)</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">31 Yrs • 5'9"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Muslim (Syed)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Surgeon dedicated to patient care. Loves outdoor sports,
+                                    family dinners, and calm evenings."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 21: Simran Sandhu -->
+                        <div class="match-card" id="match-card-21" data-id="21" data-gender="female"
+                            data-religion="sikh" data-city="chandigarh" data-age="26" data-work="tech"
+                            data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_21_simran.jpg" alt="Simran Sandhu">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Simran Sandhu</h3>
+                                <p class="match-meta-job">ML & Robotics Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'7"</span>
+                                    <span class="match-info-pill">Chandigarh</span>
+                                    <span class="match-info-pill">Sikh (Sandhu)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Driven engineer who loves emerging technology, road trips
+                                    across Punjab, and baking."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 22: Devendra Shekhawat -->
+                        <div class="match-card" id="match-card-22" data-id="22" data-gender="male" data-religion="hindu"
+                            data-city="jaipur" data-age="28" data-work="marketing" data-edu="mba" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_22_devendra.jpg" alt="Devendra Shekhawat">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Devendra Shekhawat</h3>
+                                <p class="match-meta-job">Brand Strategy Lead</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 6'1"</span>
+                                    <span class="match-info-pill">Jaipur</span>
+                                    <span class="match-info-pill">Hindu (Rajput)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Marketing strategist with deep cultural roots.
+                                    Enthusiastic about polo, history, and reading."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 23: Natasha D'Souza -->
+                        <div class="match-card" id="match-card-23" data-id="23" data-gender="female"
+                            data-religion="christian" data-city="mumbai" data-age="27" data-work="creative"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">89% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_23_natasha.jpg" alt="Natasha D'Souza">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Natasha D'Souza</h3>
+                                <p class="match-meta-job">Creative Copy Director</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Christian (Catholic)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Storyteller and creative thinker. Loves live theater,
+                                    beach runs, and good coffee."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 24: Varun Kulkarni -->
+                        <div class="match-card" id="match-card-24" data-id="24" data-gender="male" data-religion="hindu"
+                            data-city="pune" data-age="32" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">91% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_24_varun.jpg" alt="Varun Kulkarni">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Varun Kulkarni</h3>
+                                <p class="match-meta-job">Quantum Computing Lead</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">32 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Pune</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Deep tech enthusiast who values intellectual
+                                    conversations, nature walks, and classical arts."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 25: Ishita Banerjee -->
+                        <div class="match-card" id="match-card-25" data-id="25" data-gender="female"
+                            data-religion="hindu" data-city="bengaluru" data-age="28" data-work="doctor"
+                            data-edu="medical" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_25_ishita.jpg" alt="Ishita Banerjee">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Ishita Banerjee</h3>
+                                <p class="match-meta-job">Radiologist & Consultant (MD)</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'4"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Medical professional with a passion for literature,
+                                    watercolor painting, and tranquil weekends."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 26: Amanpreet Dhillon -->
+                        <div class="match-card" id="match-card-26" data-id="26" data-gender="male" data-religion="sikh"
+                            data-city="delhi" data-age="29" data-work="marketing" data-edu="mba" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">92% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_26_amanpreet.jpg" alt="Amanpreet Dhillon">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Amanpreet Dhillon</h3>
+                                <p class="match-meta-job">Vice President - Operations</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 6'0"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Sikh (Dhillon)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Corporate operations leader who believes in balance, high
+                                    energy, fitness, and family time."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 27: Kavya Madhavan -->
+                        <div class="match-card" id="match-card-27" data-id="27" data-gender="female"
+                            data-religion="hindu" data-city="hyderabad" data-age="25" data-work="tech"
+                            data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">97% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_27_kavya.jpg" alt="Kavya Madhavan">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Kavya Madhavan</h3>
+                                <p class="match-meta-job">Lead Data Scientist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Hindu (Iyer)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Data enthusiast with a love for Carnatic music,
+                                    astronomy, and meaningful conversations."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 28: Neil Mathur -->
+                        <div class="match-card" id="match-card-28" data-id="28" data-gender="male" data-religion="hindu"
+                            data-city="gurugram" data-age="27" data-work="tech" data-edu="btech-ms" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_28_neil.jpg" alt="Neil Mathur">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Neil Mathur</h3>
+                                <p class="match-meta-job">Cyber Security Specialist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Hindu (Kayastha)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Cyber security consultant looking for an honest,
+                                    optimistic partner with a kind heart."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 29: Fatima Siddiqui -->
+                        <div class="match-card" id="match-card-29" data-id="29" data-gender="female"
+                            data-religion="muslim" data-city="hyderabad" data-age="26" data-work="creative"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">92% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_29_fatima.jpg" alt="Fatima Siddiqui">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Fatima Siddiqui</h3>
+                                <p class="match-meta-job">Sustainable Urban Planner</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Muslim (Sunni)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Passionate about green architecture, cultural heritage,
+                                    and warm family gatherings."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 30: Karthik Sundaram -->
+                        <div class="match-card" id="match-card-30" data-id="30" data-gender="male" data-religion="hindu"
+                            data-city="bengaluru" data-age="30" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_30_karthik.jpg" alt="Karthik Sundaram">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Karthik Sundaram</h3>
+                                <p class="match-meta-job">Embedded Systems Architect</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">30 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Iyengar)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Hardware architect with a grounded lifestyle, love for
+                                    badminton, and positive attitude."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 31: Pooja Hegde -->
+                        <div class="match-card" id="match-card-31" data-id="31" data-gender="female"
+                            data-religion="hindu" data-city="mumbai" data-age="27" data-work="marketing" data-edu="mba"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_31_pooja.jpg" alt="Pooja Hegde">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Pooja Hegde</h3>
+                                <p class="match-meta-job">Global Talent Acquisition Head</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Hindu (Bunt)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"People-first leader who enjoys weekend tennis, theater,
+                                    and good food with friends."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 32: Manpreet Ahluwalia -->
+                        <div class="match-card" id="match-card-32" data-id="32" data-gender="male" data-religion="sikh"
+                            data-city="chandigarh" data-age="28" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">91% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_32_manpreet.jpg" alt="Manpreet Ahluwalia">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Manpreet Ahluwalia</h3>
+                                <p class="match-meta-job">Full Stack Engineering Manager</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Chandigarh</span>
+                                    <span class="match-info-pill">Sikh (Ahluwalia)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Tech manager who values integrity, spontaneous weekend
+                                    drives, and hearty laughter."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 33: Shreya Goswami -->
+                        <div class="match-card" id="match-card-33" data-id="33" data-gender="female"
+                            data-religion="hindu" data-city="delhi" data-age="25" data-work="doctor" data-edu="other"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">98% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_33_shreya.jpg" alt="Shreya Goswami">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Shreya Goswami</h3>
+                                <p class="match-meta-job">Clinical Psychologist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'4"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Compassionate mental health advocate who loves reading,
+                                    mindful living, and gentle nature."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 34: Tarun Bhatia -->
+                        <div class="match-card" id="match-card-34" data-id="34" data-gender="male" data-religion="hindu"
+                            data-city="gurugram" data-age="29" data-work="finance" data-edu="ca" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_34_tarun.jpg" alt="Tarun Bhatia">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Tarun Bhatia</h3>
+                                <p class="match-meta-job">Head of Portfolio Management</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 5'9"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Hindu (Khatri)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Finance leader who enjoys marathon training, financial
+                                    markets, and quality family time."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 35: Alisha Mathew -->
+                        <div class="match-card" id="match-card-35" data-id="35" data-gender="female"
+                            data-religion="christian" data-city="bengaluru" data-age="26" data-work="product-design"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_35_alisha.jpg" alt="Alisha Mathew">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Alisha Mathew</h3>
+                                <p class="match-meta-job">Senior UX Design Specialist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Christian (Catholic)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Design thinker focused on digital experiences, live music
+                                    events, and creative cooking."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 36: Pranav Chawla -->
+                        <div class="match-card" id="match-card-36" data-id="36" data-gender="male" data-religion="hindu"
+                            data-city="delhi" data-age="31" data-work="marketing" data-edu="mba" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">90% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_36_pranav.jpg" alt="Pranav Chawla">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Pranav Chawla</h3>
+                                <p class="match-meta-job">Growth Marketing Director</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">31 Yrs • 6'0"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Hindu (Arora)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Strategic growth leader who enjoys podcasts, squash, and
+                                    building long-lasting memories."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 37: Dr. Suniti Saxena -->
+                        <div class="match-card" id="match-card-37" data-id="37" data-gender="female"
+                            data-religion="hindu" data-city="jaipur" data-age="29" data-work="doctor" data-edu="medical"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_37_suniti.jpg" alt="Dr. Suniti Saxena">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Dr. Suniti Saxena</h3>
+                                <p class="match-meta-job">Consultant Dermatologist (MD)</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Jaipur</span>
+                                    <span class="match-info-pill">Hindu (Kayastha)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Skin specialist with a cheerful demeanor, interest in
+                                    pottery, and belief in mutual respect."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 38: Ayush Agarwal -->
+                        <div class="match-card" id="match-card-38" data-id="38" data-gender="male" data-religion="hindu"
+                            data-city="gurugram" data-age="26" data-work="tech" data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_38_ayush.jpg" alt="Ayush Agarwal">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Ayush Agarwal</h3>
+                                <p class="match-meta-job">Blockchain & Web3 Architect</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Hindu (Agarwal)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Next-gen tech builder who enjoys sci-fi novels, mountain
+                                    trekking, and table tennis."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 39: Navneet Chahal -->
+                        <div class="match-card" id="match-card-39" data-id="39" data-gender="female"
+                            data-religion="sikh" data-city="chandigarh" data-age="27" data-work="doctor" data-edu="mba"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_39_navneet.jpg" alt="Navneet Chahal">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Navneet Chahal</h3>
+                                <p class="match-meta-job">Nutrition & Wellness Consultant</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'8"</span>
+                                    <span class="match-info-pill">Chandigarh</span>
+                                    <span class="match-info-pill">Sikh (Chahal)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Wellness coach who prioritizes holistic health, warm
+                                    family ties, and scenic road trips."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 40: Sameer Merchant -->
+                        <div class="match-card" id="match-card-40" data-id="40" data-gender="male"
+                            data-religion="muslim" data-city="mumbai" data-age="30" data-work="marketing" data-edu="mba"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">89% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_40_sameer.jpg" alt="Sameer Merchant">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Sameer Merchant</h3>
+                                <p class="match-meta-job">Global Supply Chain Director</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">30 Yrs • 5'11"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Muslim (Sunni)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Logistics specialist with global experience. Enjoys deep
+                                    sea diving, jazz, and good humor."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 41: Bhavya Trivedi -->
+                        <div class="match-card" id="match-card-41" data-id="41" data-gender="female"
+                            data-religion="hindu" data-city="pune" data-age="25" data-work="tech" data-edu="btech-ms"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">97% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_41_bhavya.jpg" alt="Bhavya Trivedi">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Bhavya Trivedi</h3>
+                                <p class="match-meta-job">iOS Systems Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">25 Yrs • 5'4"</span>
+                                    <span class="match-info-pill">Pune</span>
+                                    <span class="match-info-pill">Hindu (Brahmin)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Mobile engineer who enjoys DIY home decor, classical
+                                    piano, and weekend hiking trails."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 42: Kevin Philip -->
+                        <div class="match-card" id="match-card-42" data-id="42" data-gender="male"
+                            data-religion="christian" data-city="mumbai" data-age="28" data-work="tech"
+                            data-edu="btech-ms" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">92% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_42_kevin.jpg" alt="Kevin Philip">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Kevin Philip</h3>
+                                <p class="match-meta-job">Staff Cloud Infrastructure Engineer</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Mumbai</span>
+                                    <span class="match-info-pill">Christian (Catholic)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Cloud engineer passionate about gaming, acoustic guitar,
+                                    and meaningful family traditions."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 43: Radhika Somani -->
+                        <div class="match-card" id="match-card-43" data-id="43" data-gender="female"
+                            data-religion="hindu" data-city="jaipur" data-age="28" data-work="finance" data-edu="ca"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">94% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_43_radhika.jpg" alt="Radhika Somani">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Radhika Somani</h3>
+                                <p class="match-meta-job">Private Equity Associate</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">28 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Jaipur</span>
+                                    <span class="match-info-pill">Hindu (Maheshwari)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Rankholder CA working in PE. Values cultural heritage,
+                                    honesty, and peaceful living."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 44: Ishan Varma -->
+                        <div class="match-card" id="match-card-44" data-id="44" data-gender="male" data-religion="hindu"
+                            data-city="hyderabad" data-age="29" data-work="doctor" data-edu="medical"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">96% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_44_ishan.jpg" alt="Ishan Varma">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Ishan Varma</h3>
+                                <p class="match-meta-job">General & Laparoscopic Surgeon</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">29 Yrs • 6'1"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Hindu (Kshatriya)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Surgeon dedicated to service. Loves badminton, wildlife
+                                    photography, and lighthearted talks."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 45: Tanya Grover -->
+                        <div class="match-card" id="match-card-45" data-id="45" data-gender="female"
+                            data-religion="hindu" data-city="delhi" data-age="26" data-work="creative" data-edu="other"
+                            data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">93% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_45_tanya.jpg" alt="Tanya Grover">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Tanya Grover</h3>
+                                <p class="match-meta-job">Luxury Fashion Brand Stylist</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'6"</span>
+                                    <span class="match-info-pill">Delhi</span>
+                                    <span class="match-info-pill">Hindu (Arora)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Fashion consultant with a cheerful personality. Loves art
+                                    exhibitions and weekend baking."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 46: Dhruv Pillai -->
+                        <div class="match-card" id="match-card-46" data-id="46" data-gender="male" data-religion="hindu"
+                            data-city="bengaluru" data-age="27" data-work="product-design" data-edu="mba"
+                            data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">95% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_46_dhruv.jpg" alt="Dhruv Pillai">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Dhruv Pillai</h3>
+                                <p class="match-meta-job">Product Lead - Fintech</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'10"</span>
+                                    <span class="match-info-pill">Bengaluru</span>
+                                    <span class="match-info-pill">Hindu (Pillai)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Fintech innovator who loves tech gadgets, football
+                                    weekends, and genuine conversations."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 47: Sanjana Reddy -->
+                        <div class="match-card" id="match-card-47" data-id="47" data-gender="female"
+                            data-religion="hindu" data-city="hyderabad" data-age="27" data-work="creative"
+                            data-edu="other" data-diet="non-veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge standard">91% Match</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_47_sanjana.jpg" alt="Sanjana Reddy">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Sanjana Reddy</h3>
+                                <p class="match-meta-job">Landscape & Sustainable Architect</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">27 Yrs • 5'7"</span>
+                                    <span class="match-info-pill">Hyderabad</span>
+                                    <span class="match-info-pill">Hindu (Reddy)</span>
+                                    <span class="match-info-pill">Non-Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Eco-architect who loves garden landscaping, organic
+                                    cooking, and exploring historic forts."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 48: Neha Kapoor -->
+                        <div class="match-card" id="match-card-48" data-id="48" data-gender="female"
+                            data-religion="hindu" data-city="gurugram" data-age="26" data-work="tech"
+                            data-edu="btech-ms" data-diet="veg">
+                            <div class="card-header-ribbon">
+                                <span class="match-badge compat">98% Compatibility</span>
+                                <button class="card-bookmark-btn" title="Save to Shortlist"
+                                    aria-label="Shortlist profile"><span class="bookmark-icon">♡</span></button>
+                            </div>
+                            <div class="match-avatar-wrapper">
+                                <img src="../IMAGES/ai_matches/match_48_neha.jpg" alt="Neha Kapoor">
+                                <span class="verified-badge-icon" title="Identity Verified"><i
+                                        class="ios-emoji">🛡️</i></span>
+                            </div>
+                            <div class="match-card-body">
+                                <h3>Neha Kapoor</h3>
+                                <p class="match-meta-job">Digital Transformation Consultant</p>
+                                <div class="match-pills-row">
+                                    <span class="match-info-pill">26 Yrs • 5'5"</span>
+                                    <span class="match-info-pill">Gurugram</span>
+                                    <span class="match-info-pill">Hindu (Khatri)</span>
+                                    <span class="match-info-pill">Vegetarian</span>
+                                </div>
+                                <p class="match-quote-bubble">"Consultant who believes in positivity, strong values,
+                                    weekend book clubs, and family harmony."</p>
+                                <div class="match-card-actions">
+                                    <button class="btn connect-btn">Send Interest</button>
+                                    <button class="btn-secondary view-profile-btn">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Empty State: No Shortlisted Profiles -->
+                        <div class="matches-empty-state" id="empty-state-shortlist" style="display: none;">
+                            <div class="empty-state-icon"><i class="ios-emoji">💖</i></div>
+                            <h3>No Shortlisted Profiles Yet</h3>
+                            <p>You haven't saved any profiles to your shortlist. Click the shortlist heart icon on any
+                                match card to save them here for easy review.</p>
+                            <button class="btn browse-all-matches-btn"
+                                style="border-radius: 50px; padding: 13px 32px; margin-top: 10px; cursor: pointer;">Browse
+                                Recommended Matches</button>
+                        </div>
+
+                        <!-- Empty State: No Interests Sent -->
+                        <div class="matches-empty-state" id="empty-state-interests" style="display: none;">
+                            <div class="empty-state-icon"><i class="ios-emoji">💌</i></div>
+                            <h3>No Express Interests Sent Yet</h3>
+                            <p>You haven't sent interest to any profiles yet. Click "Send Interest" on profiles you like
+                                to initiate a conversation and connect.</p>
+                            <button class="btn browse-all-matches-btn"
+                                style="border-radius: 50px; padding: 13px 32px; margin-top: 10px; cursor: pointer;">Discover
+                                Verified Matches</button>
+                        </div>
+
+                        <!-- Empty State: Filter / Search Mismatch -->
+                        <div class="matches-empty-state" id="empty-state-filters" style="display: none;">
+                            <div class="empty-state-icon">🔍</div>
+                            <h3>No Matching Profiles Found</h3>
+                            <p>We couldn't find any profiles matching your search and filter criteria. Try resetting or
+                                adjusting your filter preferences.</p>
+                            <button class="btn-secondary empty-reset-filters-btn"
+                                style="border-radius: 50px; padding: 13px 32px; margin-top: 10px; cursor: pointer;">Reset
+                                All Filters</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love and trust.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Simple Profile Detail Modal -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close-btn" id="modal-close">&times;</button>
+                <div class="modal-avatar-container">
+                    <img id="modal-img" src="../IMAGES/ai_matches/match_1_aishwarya.jpg" alt="Candidate Photo">
+                    <span class="verified-badge-icon"
+                        style="position: absolute; bottom: 5px; right: 5px; width: 32px; height: 32px; font-size: 16px;"><i
+                            class="ios-emoji">🛡️</i></span>
+                </div>
+                <h2 id="modal-name">Aishwarya Sharma</h2>
+                <span class="match-badge compat" id="modal-badge">98% Compatibility</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>Age & Height</h4>
+                        <p id="modal-age-height">25 Years • 5'5"</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Religion & Community</h4>
+                        <p id="modal-religion">Hindu (Bhardwaj)</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Profession & Career</h4>
+                        <p id="modal-job">Senior Software Engineer</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Highest Education</h4>
+                        <p id="modal-edu">B.Tech / MBA</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Current Residence</h4>
+                        <p id="modal-city">Gurugram, India</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>Diet & Lifestyle</h4>
+                        <p id="modal-diet">Vegetarian • Non-Smoker</p>
+                    </div>
+                </div>
+
+                <div class="modal-about-box">
+                    <h4>About Candidate</h4>
+                    <p id="modal-bio">"I am looking for an understanding life partner who values work-life harmony,
+                        family orientation, and mutual dreams."</p>
+                </div>
+
+                <div class="modal-hobbies-section">
+                    <h4>Passions & Lifestyle Interests</h4>
+                    <div class="modal-hobbies-grid">
+                        <span class="hobby-pill">Travel</span>
+                        <span class="hobby-pill">Reading</span>
+                        <span class="hobby-pill">Music</span>
+                        <span class="hobby-pill">Coffee</span>
+                        <span class="hobby-pill">Fitness</span>
+                    </div>
+                </div>
+
+                <div class="modal-contact-unlock">
+                    <p><strong>Safety First:</strong> Contact information is protected.</p>
+                    <p style="font-size: 13px; font-weight: 600; color: #d63384; margin-bottom: 0;">Sending an Interest
+                        request allows mutual exchange of contact details.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn" id="modal-connect-action"
+                        style="padding: 13px 28px; font-size: 15px; border: none; cursor: pointer;">
+                        Send Express Interest
+                    </button>
+                    <button class="btn-secondary" id="modal-shortlist-action"
+                        style="padding: 13px 24px; font-size: 15px; border-radius: 50px; cursor: pointer;">
+                        Shortlist Profile
+                    </button>
+                    <button class="btn-secondary" id="modal-close-footer"
+                        style="padding: 13px 24px; font-size: 15px; border-radius: 50px; cursor: pointer;">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

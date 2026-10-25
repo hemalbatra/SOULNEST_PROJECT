@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Terms &amp; Conditions | SoulNest Matrimony</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/support.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Compact Hero -->
+        <section class="support-hero">
+            <div class="support-hero-content">
+                <div class="support-hero-badge">📜 Terms of Service &amp; User Code</div>
+                <h1>Terms &amp; Conditions</h1>
+                <p>Simple, transparent rules to ensure genuine, respectful, and legally sound matchmaking for all members and families.</p>
+                <div class="support-hero-meta">
+                    <span>📅 Updated: Oct 2026</span>
+                    <span>⚖️ Binding User Agreement</span>
+                    <span>🇮🇳 Indian Law Jurisdiction</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compact Interactive Content -->
+        <section class="support-doc-section">
+            <div class="compact-doc-container">
+                
+                <!-- Quick Category Tabs -->
+                <div class="support-tabs-wrapper">
+                    <div class="support-tabs-bar" role="tablist">
+                        <button class="support-tab-btn active" data-tab="tab-terms-eligibility">👥 1. Eligibility &amp; Intent</button>
+                        <button class="support-tab-btn" data-tab="tab-terms-conduct">✨ 2. Authenticity &amp; Code</button>
+                        <button class="support-tab-btn" data-tab="tab-terms-role">⚖️ 3. Platform Scope</button>
+                        <button class="support-tab-btn" data-tab="tab-terms-legal">🔒 4. Security &amp; Law</button>
+                    </div>
+                </div>
+
+                <!-- Pane 1: Eligibility & Intent -->
+                <div class="support-tab-pane active" id="tab-terms-eligibility">
+                    <div class="compact-cards-grid">
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🎂</div>
+                                <h3>Age &amp; Legal Competence</h3>
+                            </div>
+                            <p>Mandatory minimum requirements under Indian marriage law:</p>
+                            <ul class="compact-card-list">
+                                <li>Minimum 18 years for women, 21 years for men</li>
+                                <li>Legally competent to enter a valid marriage contract</li>
+                                <li>Legally single, divorced (with decree), or widowed</li>
+                                <li>Misrepresenting marital status results in an immediate ban</li>
+                            </ul>
+                        </div>
+
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">💍</div>
+                                <h3>Sole Matrimonial Intent</h3>
+                            </div>
+                            <p>SoulNest is exclusively dedicated to marriage alliances:</p>
+                            <ul class="compact-card-list">
+                                <li>Casual dating, flings, or adult solicitation are banned</li>
+                                <li>Accounts may be managed by prospective brides/grooms or parents</li>
+                                <li>Commercial employment or marketing use is strictly prohibited</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="compact-callout danger">
+                        <h4>🛑 Prohibition on Underage Registration</h4>
+                        <p>Underage registrations are automatically frozen upon discovery, and IP logs are permanently blacklisted to protect community safety.</p>
+                    </div>
+                </div>
+
+                <!-- Pane 2: Authenticity & Code -->
+                <div class="support-tab-pane" id="tab-terms-conduct">
+                    <div class="compact-cards-grid">
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">✅</div>
+                                <h3>Truthful Representation</h3>
+                            </div>
+                            <p>Standards expected across all member profiles:</p>
+                            <ul class="compact-card-list">
+                                <li>Accurate education, employment, and income details</li>
+                                <li>Recent, genuine personal photographs (no stock/celebrity images)</li>
+                                <li>No duplicate, ghost, or misleading identity setups</li>
+                            </ul>
+                        </div>
+
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🚫</div>
+                                <h3>Zero-Tolerance Code</h3>
+                            </div>
+                            <p>Strictly prohibited actions subject to immediate termination:</p>
+                            <ul class="compact-card-list">
+                                <li><strong>No Financial Solicitations:</strong> Never ask for money, gifts, or loans</li>
+                                <li><strong>No Harassment:</strong> Zero tolerance for abusive language or threats</li>
+                                <li><strong>No Scraping:</strong> Automated bots and data harvesting are forbidden</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="compact-callout warning">
+                        <h4>⚠️ Financial Scam Alert</h4>
+                        <p>SoulNest enforces an instant lifetime ban on any profile asking for wire transfers, parcel fees, or emergency medical funds under any pretext.</p>
+                    </div>
+                </div>
+
+                <!-- Pane 3: Platform Scope -->
+                <div class="support-tab-pane" id="tab-terms-role">
+                    <div class="compact-cards-grid">
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🤝</div>
+                                <h3>Matchmaking Facilitator</h3>
+                            </div>
+                            <p>Understanding SoulNest's role in your search:</p>
+                            <ul class="compact-card-list">
+                                <li>We provide discovery, filtering, and mutual interest tools</li>
+                                <li>Verification badges confirm identity documents, not character</li>
+                                <li>We do not guarantee marriage outcomes or personal compatibility</li>
+                            </ul>
+                        </div>
+
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🔍</div>
+                                <h3>Independent Verification</h3>
+                            </div>
+                            <p>Due diligence recommended for all families:</p>
+                            <ul class="compact-card-list">
+                                <li>Verify workplace, address, and reference details independently</li>
+                                <li>Always involve close family or trusted guardians</li>
+                                <li>SoulNest is not liable for post-connection personal disputes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 4: Security & Law -->
+                <div class="support-tab-pane" id="tab-terms-legal">
+                    <div class="compact-cards-grid">
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🔐</div>
+                                <h3>Account Security</h3>
+                            </div>
+                            <p>Safeguarding your personal account:</p>
+                            <ul class="compact-card-list">
+                                <li>Never share your password or OTP with anyone</li>
+                                <li>Report any suspected breach immediately to <code>support@soulnest.com</code></li>
+                                <li>Always log out when using shared family or public computers</li>
+                            </ul>
+                        </div>
+
+                        <div class="compact-card">
+                            <div class="compact-card-header">
+                                <div class="compact-card-icon">🏛️</div>
+                                <h3>Jurisdiction &amp; Disputes</h3>
+                            </div>
+                            <p>Governing legal framework:</p>
+                            <ul class="compact-card-list">
+                                <li>Governed by the substantive laws of India</li>
+                                <li>Exclusive dispute jurisdiction in Gurugram / New Delhi courts</li>
+                                <li>SoulNest reserves the right to terminate violating accounts without refund</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slim Action Banner -->
+                <div class="compact-action-banner">
+                    <div class="compact-action-text">
+                        <h4>Questions About Membership Terms?</h4>
+                        <p>Our compliance and customer desks are available to provide immediate clarity.</p>
+                    </div>
+                    <div class="compact-action-btns">
+                        <a href="contact.html" class="btn">Contact Compliance</a>
+                        <a href="safety.html" class="btn-secondary">Safety Tips</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love, authenticity, and lifelong security.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html" style="color: #ff75a0; font-weight: 700;">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

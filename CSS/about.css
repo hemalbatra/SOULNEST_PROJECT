@@ -1,0 +1,809 @@
+/*======================================================
+  SOULNEST ABOUT US PAGE STYLING
+  Clean, modern, and attractive presentation
+======================================================*/
+
+/* General Container for About Page */
+.about-container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Section Tag & Headers */
+.section-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(255, 94, 168, 0.12), rgba(214, 51, 132, 0.12));
+    color: #d63384;
+    border: 1px solid #ffd2e5;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section-header-center {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.section-header-center h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.section-header-center .section-subtitle {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/*==============================
+   1. ABOUT HERO SECTION
+==============================*/
+
+.about-hero {
+    background: radial-gradient(circle at 50% 20%, #fff0f7 0%, #ffffff 70%, #fff5fa 100%);
+    text-align: center;
+    padding: 130px 8% 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-pill-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(255, 94, 168, 0.15), rgba(214, 51, 132, 0.15));
+    color: #d63384;
+    border: 1px solid #ffd2e5;
+    padding: 8px 24px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.08);
+}
+
+.about-hero h1 {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.about-hero h1 span {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-subtitle {
+    font-size: 19px;
+    color: #666;
+    max-width: 820px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+/* Floating Stats Strip */
+.about-stats-strip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid #ffe6f1;
+    padding: 18px 40px;
+    border-radius: 60px;
+    box-shadow: 0 15px 40px rgba(214, 51, 132, 0.1);
+    flex-wrap: wrap;
+}
+
+.about-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+}
+
+.about-stat-item .stat-icon {
+    font-size: 26px;
+    background: #fff0f7;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(214, 51, 132, 0.12);
+}
+
+.about-stat-item strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #222;
+    line-height: 1.2;
+}
+
+.about-stat-item small {
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.about-stat-divider {
+    width: 1px;
+    height: 38px;
+    background: #f0d5e2;
+}
+
+/*==============================
+   2. OUR STORY & MISSION
+==============================*/
+
+.about-story-section {
+    background: #ffffff;
+    padding: 100px 8%;
+}
+
+.about-split-row {
+    display: grid;
+    grid-template-columns: 46% 54%;
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.about-split-row.reverse {
+    grid-template-columns: 54% 46%;
+}
+
+.about-split-row.reverse .about-image-card {
+    order: 2;
+}
+
+.about-split-row.reverse .about-text-content {
+    order: 1;
+}
+
+.about-image-card {
+    position: relative;
+    border-radius: 30px;
+}
+
+.about-image-card img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    border: 4px solid #fff;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image-card:hover img {
+    transform: scale(1.02);
+}
+
+.image-floating-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 24px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 12px 30px rgba(214, 51, 132, 0.15);
+    border: 1px solid #ffd2e5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-floating-badge.top-right {
+    bottom: auto;
+    top: -20px;
+    left: auto;
+    right: 20px;
+}
+
+.about-text-content h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+.about-text-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #fff8fb;
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: 1px solid #ffe6f1;
+    transition: transform 0.3s ease;
+}
+
+html.dark-theme .point-item {
+    background: #141724;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.point-item:hover {
+    transform: translateX(6px);
+    border-color: #ffd2e5;
+}
+
+html.dark-theme .point-item:hover {
+    background: #181c2e;
+    border-color: rgba(255, 117, 160, 0.35);
+    box-shadow: 0 14px 32px rgba(214, 51, 132, 0.2);
+}
+
+.check-icon {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.point-item strong {
+    display: block;
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+html.dark-theme .point-item strong {
+    color: #f8fafc;
+}
+
+.point-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+html.dark-theme .point-item p {
+    color: #94a3b8;
+}
+
+/*==============================
+   3. THREE PILLARS SECTION
+==============================*/
+
+.about-pillars-section {
+    background: linear-gradient(135deg, #fff5fa, #fff0f7);
+    padding: 100px 8%;
+    position: relative;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.pillar-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 45px 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ffe6f1;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(214, 51, 132, 0.16);
+    border-color: #ffd2e5;
+}
+
+.pillar-card.active-pillar {
+    border: 2px solid #ff5ea8;
+    box-shadow: 0 20px 50px rgba(214, 51, 132, 0.12);
+}
+
+.pillar-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffd2e5;
+    letter-spacing: 1px;
+}
+
+.pillar-icon-box {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.pillar-icon-box.blue-grad {
+    background: linear-gradient(135deg, #4da1ff, #005bc5);
+    box-shadow: 0 10px 25px rgba(0, 91, 197, 0.25);
+}
+
+.pillar-icon-box.pink-grad {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    box-shadow: 0 10px 25px rgba(214, 51, 132, 0.3);
+}
+
+.pillar-icon-box.green-grad {
+    background: linear-gradient(135deg, #38ef7d, #11998e);
+    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.25);
+}
+
+.pillar-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.pillar-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.pillar-badge {
+    background: #fff0f7;
+    color: #d63384;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    align-self: flex-start;
+    border: 1px solid #ffd2e5;
+}
+
+/*==============================
+   4. MILESTONES TIMELINE
+==============================*/
+
+.about-timeline-section {
+    background: #ffffff;
+    padding: 100px 8%;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.timeline-item {
+    text-align: center;
+    position: relative;
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: 800;
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 4px solid #ffd2e5;
+    box-shadow: 0 0 0 6px #fff0f7;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-card {
+    background: #fff8fb;
+    border: 1px solid #ffe6f1;
+    padding: 25px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+}
+
+.timeline-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(214, 51, 132, 0.1);
+    border-color: #ffd2e5;
+}
+
+.timeline-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.timeline-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*==============================
+   5. LEADERSHIP & TEAM SECTION
+==============================*/
+
+.team-section {
+    background: linear-gradient(135deg, #fff5fa, #ffffff);
+    padding: 100px 8%;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: #ffffff;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ffe6f1;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 340px;
+    max-width: 360px;
+    width: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(214, 51, 132, 0.14);
+    border-color: #ffd2e5;
+}
+
+.team-image-box {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.team-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image-box img {
+    transform: scale(1.06);
+}
+
+.team-role-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    color: #d63384;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #ffd2e5;
+}
+
+.team-card-info {
+    padding: 24px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.team-card-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.team-designation {
+    color: #d63384;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.team-bio {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.team-socials a {
+    width: 36px;
+    height: 36px;
+    background: #fff0f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #ffd2e5;
+}
+
+.team-socials a:hover {
+    background: #d63384;
+    transform: translateY(-3px);
+}
+
+/*======================================================
+   6. COMPREHENSIVE RESPONSIVE DESIGN (About Us Page)
+======================================================*/
+
+/* Large Tablets & Small Laptops (<= 1200px) */
+@media(max-width: 1200px) {
+    .team-grid {
+        gap: 25px;
+    }
+    
+    .timeline-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Medium Tablets & iPads (<= 992px) */
+@media(max-width: 992px) {
+    .about-hero {
+        padding: 95px 4% 50px;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .about-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .about-stats-strip {
+        border-radius: 26px;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 24px;
+    }
+
+    .about-stat-divider {
+        display: none;
+    }
+
+    .about-split-row, 
+    .about-split-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-split-row .about-image-card,
+    .about-split-row.reverse .about-image-card {
+        order: 1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .about-split-row .about-text-content,
+    .about-split-row.reverse .about-text-content {
+        order: 2;
+    }
+
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Small Tablets & Large Phones (<= 768px) */
+@media(max-width: 768px) {
+    .about-hero {
+        padding: 85px 4% 40px;
+    }
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-story-section,
+    .about-pillars-section,
+    .about-timeline-section,
+    .team-section {
+        padding: 60px 4%;
+    }
+
+    .section-header-center {
+        margin-bottom: 40px;
+    }
+
+    .section-header-center h2 {
+        font-size: 30px;
+    }
+
+    .about-text-content h2 {
+        font-size: 28px;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .timeline-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-grid {
+        gap: 20px;
+    }
+}
+
+/* Standard Mobile Phones (<= 576px) */
+@media(max-width: 576px) {
+    .about-hero {
+        padding: 75px 3% 35px;
+    }
+
+    .about-pill-tag {
+        font-size: 11px;
+        padding: 6px 16px;
+    }
+
+    .about-hero h1 {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    .about-hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .about-stats-strip {
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-stat-item {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .about-story-section,
+    .about-pillars-section,
+    .about-timeline-section,
+    .team-section {
+        padding: 45px 3%;
+    }
+
+    .section-header-center h2,
+    .about-text-content h2 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .section-header-center .section-subtitle {
+        font-size: 14px;
+    }
+
+    .about-text-content p {
+        font-size: 14px;
+    }
+
+    .pillars-card {
+        padding: 22px 18px;
+    }
+
+    .timeline-card {
+        padding: 22px 18px;
+    }
+
+    .team-grid {
+        gap: 20px;
+    }
+
+    .team-card {
+        flex: 0 1 100%;
+        max-width: 360px;
+    }
+
+    .team-card-img {
+        height: 220px;
+    }
+
+    .team-card-info {
+        padding: 18px 16px;
+    }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media(max-width: 360px) {
+    .about-hero h1 {
+        font-size: 22px;
+    }
+
+    .about-stat-item strong {
+        font-size: 13px;
+    }
+}

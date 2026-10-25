@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Success Stories | SoulNest</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/stories.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html" class="active-nav">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Stories Hero -->
+        <section class="stories-hero">
+            <span class="stories-pill-tag">REAL LOVE STORIES</span>
+            <h1>SoulNest <span>Love Stories</span></h1>
+            <p>From a single tap on SoulNest to walking down the aisle. Explore romantic moments and memories of our happy couples.</p>
+
+            <!-- Filter Buttons -->
+            <div class="stories-filter">
+                <button class="filter-btn active" data-filter="all">All Stories</button>
+                <button class="filter-btn" data-filter="featured">Featured Weddings</button>
+                <button class="filter-btn" data-filter="recent">Recent Weddings</button>
+            </div>
+        </section>
+
+        <!-- Stories Gallery Grid -->
+        <section class="stories-gallery">
+            <div class="grid-container">
+
+                <!-- Story 1: Manny & Kizie -->
+                <div class="card featured" 
+                     data-date="December 24, 2024" 
+                     data-location="Goa, India" 
+                     data-how="Connected via SoulNest Smart Compatibility in 2022. After 6 months of endless late-night chats, their families met for a heartwarming Roka ceremony in Delhi." 
+                     data-advice="Never compromise on mutual respect and shared laughter. SoulNest made finding true love feel like destiny." 
+                     data-img1="../IMAGES/couple2.png" 
+                     data-img2="../IMAGES/couple11.jpg" 
+                     data-img3="../IMAGES/couple14.jpg"
+                     data-tag1="1st Date: Blue Tokai Cafe"
+                     data-tag2="Proposed at Sunset Beach"
+                     data-compat="99% Soul Compatibility">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple2.png" alt="Manny and Kizie">
+                        <span class="story-category-tag">Featured Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Manny & Kizie</h3>
+                        <p class="story-couple-meta">Gurugram • Married Dec 2024</p>
+                        <p class="story-excerpt">"SoulNest brought us together across two different cities. Today we are happily married and thankful for this journey."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 2: Adi & Tara -->
+                <div class="card recent" 
+                     data-date="January 18, 2025" 
+                     data-location="Mumbai, Maharashtra" 
+                     data-how="Adi sent an Interest request on SoulNest after reading Tara's bio about classical music. A week later, they met for artisan coffee in Bandra." 
+                     data-advice="Take your time getting to know each other. Trust the verification and compatibility algorithms!" 
+                     data-img1="../IMAGES/couple3.png" 
+                     data-img2="../IMAGES/couple15.jpg" 
+                     data-img3="../IMAGES/couple16.jpg"
+                     data-tag1="Bonded over Indie Music"
+                     data-tag2="Marine Drive Proposal"
+                     data-compat="97% Harmony Score">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple3.png" alt="Adi and Tara">
+                        <span class="story-category-tag recent-tag">Recent Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Adi & Tara</h3>
+                        <p class="story-couple-meta">Mumbai • Married Jan 2025</p>
+                        <p class="story-excerpt">"We connected instantly through SoulNest. Our families loved each other from the very first meeting in Mumbai."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 3: Sid & Kiara -->
+                <div class="card featured" 
+                     data-date="November 12, 2024" 
+                     data-location="Udaipur, Rajasthan" 
+                     data-how="Sid from Delhi and Kiara from Jaipur matched with a 98% compatibility rating. Their shared passion for heritage architecture led to a royal fairytale wedding." 
+                     data-advice="Look for a partner who is your best friend first. SoulNest made the search peaceful and safe." 
+                     data-img1="../IMAGES/couple4.png" 
+                     data-img2="../IMAGES/couple17.jpg" 
+                     data-img3="../IMAGES/couple18.jpg"
+                     data-tag1="Royal Palace Wedding"
+                     data-tag2="Surprise Lakeview Ring"
+                     data-compat="98% Royal Match">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple4.png" alt="Sid and Kiara">
+                        <span class="story-category-tag">Featured Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Sid & Kiara</h3>
+                        <p class="story-couple-meta">Jaipur • Married Nov 2024</p>
+                        <p class="story-excerpt">"Finding a life partner became easy with SoulNest. Our dream wedding became a reality with our loved ones."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 4: Ranbir & Alia -->
+                <div class="card recent" 
+                     data-date="February 14, 2025" 
+                     data-location="Bengaluru, Karnataka" 
+                     data-how="Both working in tech in Bengaluru, Ranbir and Alia matched on SoulNest and bonded over hiking trails and weekend cooking experiments." 
+                     data-advice="Be honest in your profile bio and preferences. True compatibility starts with authenticity." 
+                     data-img1="../IMAGES/couple5.png" 
+                     data-img2="../IMAGES/couple19.jpg" 
+                     data-img3="../IMAGES/couple20.jpg"
+                     data-tag1="First Trek: Nandi Hills"
+                     data-tag2="Valentine's Day Wedding"
+                     data-compat="96% Shared Passion">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple5.png" alt="Ranbir and Alia">
+                        <span class="story-category-tag recent-tag">Recent Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Ranbir & Alia</h3>
+                        <p class="story-couple-meta">Bengaluru • Married Feb 2025</p>
+                        <p class="story-excerpt">"We found deep compatibility, trust, and true love. Thank you SoulNest for making our forever possible."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 5: Rahul & Athiya -->
+                <div class="card featured" 
+                     data-date="October 28, 2024" 
+                     data-location="Pune, Maharashtra" 
+                     data-how="Rahul and Athiya's families connected through SoulNest's relationship managers, who facilitated smooth family video meetings across cities." 
+                     data-advice="Involve your family early. SoulNest provides a safe bridge for modern individuals and traditional values." 
+                     data-img1="../IMAGES/couple6.png" 
+                     data-img2="../IMAGES/couple21.jpg" 
+                     data-img3="../IMAGES/couple22.jpg"
+                     data-tag1="Traditional Roka Blessing"
+                     data-tag2="Garden Lawn Wedding"
+                     data-compat="97% Family Harmony">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple6.png" alt="Rahul and Athiya">
+                        <span class="story-category-tag">Featured Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Rahul & Athiya</h3>
+                        <p class="story-couple-meta">Pune • Married Oct 2024</p>
+                        <p class="story-excerpt">"After months of searching elsewhere, SoulNest introduced us to each other. It changed our lives forever."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 6: Virat & Anushka -->
+                <div class="card recent" 
+                     data-date="March 02, 2025" 
+                     data-location="Chandigarh, Punjab" 
+                     data-how="Virat, a doctor, and Anushka, a professor, found common ground in their humanitarian goals and family roots in Chandigarh." 
+                     data-advice="Patience is key in finding your soulmate. SoulNest's verified ID checks gave us total peace of mind." 
+                     data-img1="../IMAGES/couple7.png" 
+                     data-img2="../IMAGES/couple23.jpg" 
+                     data-img3="../IMAGES/couple24.jpg"
+                     data-tag1="Book Club Connection"
+                     data-tag2="Anand Karaj Ceremony"
+                     data-compat="98% Values Alignment">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple7.png" alt="Virat and Anushka">
+                        <span class="story-category-tag recent-tag">Recent Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Virat & Anushka</h3>
+                        <p class="story-couple-meta">Chandigarh • Married Mar 2025</p>
+                        <p class="story-excerpt">"Our journey started with a simple interest request. Today we proudly call each other best friends and soulmates."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 7: Rohit & Ritika -->
+                <div class="card featured" 
+                     data-date="August 15, 2024" 
+                     data-location="Hyderabad, Telangana" 
+                     data-how="Matched with 96% compatibility in Hyderabad. Their shared love for travel and cultural traditions united two wonderful families." 
+                     data-advice="Always communicate openly about your long-term life vision and support each other's career ambitions." 
+                     data-img1="../IMAGES/couple8.png" 
+                     data-img2="../IMAGES/couple2.png" 
+                     data-img3="../IMAGES/couple6.png"
+                     data-tag1="Travelled 8 Countries"
+                     data-tag2="Lake Resort Sangeet"
+                     data-compat="96% Life Goals Match">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple8.png" alt="Rohit and Ritika">
+                        <span class="story-category-tag">Featured Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Rohit & Ritika</h3>
+                        <p class="story-couple-meta">Hyderabad • Married Aug 2024</p>
+                        <p class="story-excerpt">"A single click on SoulNest led to beautiful weekend chats, family blessings, and a wedding of our dreams."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 8: Vicky & Katrina -->
+                <div class="card recent" 
+                     data-date="January 08, 2025" 
+                     data-location="Jaipur, Rajasthan" 
+                     data-how="Vicky and Katrina connected when their lifestyle preferences and humor aligned seamlessly on SoulNest." 
+                     data-advice="Trust the journey. When it's the right person, everything falls effortlessly into place." 
+                     data-img1="../IMAGES/couple9.png" 
+                     data-img2="../IMAGES/couple4.png" 
+                     data-img3="../IMAGES/couple.png"
+                     data-tag1="First Laugh on Video Call"
+                     data-tag2="Candlelit Rooftop Dinner"
+                     data-compat="99% Humor & Warmth">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple9.png" alt="Vicky and Katrina">
+                        <span class="story-category-tag recent-tag">Recent Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Vicky & Katrina</h3>
+                        <p class="story-couple-meta">Jaipur • Married Jan 2025</p>
+                        <p class="story-excerpt">"Finding someone who matches your energy and values is the greatest blessing. Thank you SoulNest!"</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+                <!-- Story 9: Peter & Gwen -->
+                <div class="card recent" 
+                     data-date="April 20, 2025" 
+                     data-location="Kolkata, West Bengal" 
+                     data-how="Peter and Gwen found mutual admiration for literature, research, and quiet mountain retreats through SoulNest." 
+                     data-advice="Find someone who respects your individuality while sharing your core ethics." 
+                     data-img1="../IMAGES/couple10.png" 
+                     data-img2="../IMAGES/couple7.png" 
+                     data-img3="../IMAGES/couple3.png"
+                     data-tag1="Kolkata Coffee House"
+                     data-tag2="Hill Station Vows"
+                     data-compat="95% Intellectual Match">
+                    <div class="card-img-wrapper">
+                        <img src="../IMAGES/couple10.png" alt="Peter and Gwen">
+                        <span class="story-category-tag recent-tag">Recent Wedding</span>
+                    </div>
+                    <div class="story-card-body">
+                        <h3>Peter & Gwen</h3>
+                        <p class="story-couple-meta">Kolkata • Married Apr 2025</p>
+                        <p class="story-excerpt">"From our first message to walking down the aisle, every moment has been a testament to true love."</p>
+                        <button class="btn read-story-btn">View Their Story</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Romantic Love Album & Story Modal -->
+    <div class="modal-overlay" id="story-modal">
+        <div class="modal-content cute-story-modal">
+            <!-- Modal Close Button -->
+            <button class="cute-close-btn" id="story-modal-close" title="Close Love Album">✕</button>
+
+            <!-- Cute Top Header Bar with Hearts Banner -->
+            <div class="cute-album-header">
+                <div class="cute-badge-row">
+                    <span class="cute-pill-stamp">SOULNEST LOVE DIARY</span>
+                    <span class="compat-badge-stamp" id="story-modal-compat"><i class="ios-emoji">💖</i> 99% Soul Match</span>
+                </div>
+                <h2 id="story-modal-title">Manny & Kizie</h2>
+                <p id="story-modal-location" class="cute-couple-sub">Gurugram • Married Dec 2024</p>
+            </div>
+            
+            <div class="modal-body cute-modal-scroll">
+                
+                <!-- CUTE 3-PHOTO POLAROID PHOTO ALBUM -->
+                <div class="polaroid-album-section">
+                    <div class="album-heading-strip">
+                        <span>Couple Photo Memories</span>
+                    </div>
+                    <div class="polaroid-gallery-row">
+                        <!-- Polaroid Photo 1 -->
+                        <div class="polaroid-frame p-frame-1 active-photo" id="polaroid-box-1">
+                            <div class="polaroid-tape"></div>
+                            <img id="story-img-1" src="../IMAGES/couple2.png" alt="The Wedding Day">
+                            <div class="polaroid-caption">The Wedding Day</div>
+                        </div>
+                        <!-- Polaroid Photo 2 -->
+                        <div class="polaroid-frame p-frame-2" id="polaroid-box-2">
+                            <div class="polaroid-tape"></div>
+                            <img id="story-img-2" src="../IMAGES/couple.png" alt="First Date & Engagement">
+                            <div class="polaroid-caption">Proposal & Date</div>
+                        </div>
+                        <!-- Polaroid Photo 3 -->
+                        <div class="polaroid-frame p-frame-3" id="polaroid-box-3">
+                            <div class="polaroid-tape"></div>
+                            <img id="story-img-3" src="../IMAGES/signup_couple2.png" alt="Happy Life Together">
+                            <div class="polaroid-caption">Sweet Moments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cute Milestone Tags Row -->
+                <div class="cute-tags-container">
+                    <span class="cute-sparkle-pill" id="story-tag-1">1st Date: Blue Tokai Cafe</span>
+                    <span class="cute-sparkle-pill" id="story-tag-2">Proposed at Sunset Beach</span>
+                    <span class="cute-sparkle-pill">Verified ID Checked</span>
+                </div>
+
+                <!-- Quick Wedding Facts Card -->
+                <div class="cute-facts-strip">
+                    <div class="fact-card">
+                        <span class="fact-icon"><i class="ios-emoji">💒</i></span>
+                        <div>
+                            <small>Wedding Date</small>
+                            <strong id="story-modal-date">December 24, 2024</strong>
+                        </div>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon"><i class="ios-emoji">📍</i></span>
+                        <div>
+                            <small>Destination Vows</small>
+                            <strong id="story-modal-place">Goa, India</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Narrative: How We Met -->
+                <div class="cute-story-box love-letter-box">
+                    <div class="love-letter-stamp"><i class="ios-emoji">💌</i></div>
+                    <h4>How We Found Each Other on SoulNest</h4>
+                    <p id="story-modal-how">"Connected via SoulNest Smart Compatibility in 2022. After 6 months of endless late-night chats, their families met for a heartwarming Roka ceremony in Delhi."</p>
+                </div>
+
+                <!-- Romantic Quote Speech Bubble -->
+                <div class="cute-quote-bubble">
+                    <div class="quote-heart-icon"><i class="ios-emoji">💖</i></div>
+                    <h4>In Their Own Words</h4>
+                    <p id="story-modal-quote">"SoulNest brought us together across two different cities. Today we are happily married and thankful for this journey."</p>
+                </div>
+
+                <!-- Relationship Advice Box -->
+                <div class="cute-advice-box">
+                    <span class="advice-sparkle"><i class="ios-emoji">💡</i></span>
+                    <div>
+                        <h4>Advice for Single Members</h4>
+                        <p id="story-modal-advice">"Never compromise on mutual respect and shared laughter. SoulNest made finding true love feel like destiny."</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Cute Footer -->
+                <div class="cute-modal-footer">
+                    <button class="cute-heart-shower-btn" id="send-wishes-btn">
+                        <span><i class="ios-emoji">💖</i></span> Send Love & Best Wishes
+                    </button>
+                    <button class="btn-secondary cute-close-footer" id="story-modal-close-footer">
+                        Close Album
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love and trust.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

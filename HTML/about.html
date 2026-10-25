@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>About Us | SoulNest</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html" class="active-nav">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <span class="about-pill-tag">EMPOWERING COMPATIBLE COMPANIONSHIP</span>
+            <h1>Connecting Hearts, <span>Creating Homes</span></h1>
+            <p class="about-hero-subtitle">
+                SoulNest is India's most trusted matrimonial platform, dedicated to helping individuals discover lifelong companionship with genuine trust, safety, and compatibility.
+            </p>
+
+            <!-- Floating Trust & Milestone Strip -->
+            <div class="about-stats-strip">
+                <div class="about-stat-item">
+                    <span class="stat-icon"><i class="ios-emoji">💍</i></span>
+                    <div>
+                        <strong>25,000+</strong>
+                        <small>Happy Marriages</small>
+                    </div>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat-item">
+                    <span class="stat-icon"><i class="ios-emoji">🛡️</i></span>
+                    <div>
+                        <strong>100%</strong>
+                        <small>Manual ID Verified</small>
+                    </div>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat-item">
+                    <span class="stat-icon"><i class="ios-emoji">⭐</i></span>
+                    <div>
+                        <strong>4.9 / 5</strong>
+                        <small>User Satisfaction</small>
+                    </div>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat-item">
+                    <span class="stat-icon"><i class="ios-emoji">🇮🇳</i></span>
+                    <div>
+                        <strong>50+ Cities</strong>
+                        <small>Pan-India Network</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story & Mission Section -->
+        <section class="about-story-section">
+            <div class="about-container">
+                <!-- Block 1: The Journey -->
+                <div class="about-split-row">
+                    <div class="about-image-card">
+                        <img src="../IMAGES/couple12.jpg" alt="SoulNest Married Couple">
+                        <div class="image-floating-badge">
+                            <span><i class="ios-emoji">♥</i></span> 10+ Years of Bringing Hearts Together
+                        </div>
+                    </div>
+                    <div class="about-text-content">
+                        <span class="section-tag">OUR ORIGIN & PURPOSE</span>
+                        <h2>A Mission Built on Trust & Love</h2>
+                        <p>
+                            Founded with a singular vision—to build a safe, modern, and reliable space for life partnership—SoulNest has grown from a humble initiative into one of India’s foremost matchmaking destinations.
+                        </p>
+                        <p>
+                            We believe that marriage is not merely a contract between two people, but the joyful harmony of two families, cultures, and dreams.
+                        </p>
+                        <div class="about-points-list">
+                            <div class="point-item">
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Manual Document Verification</strong>
+                                    <p>Every profile undergoes government ID verification to prevent spam and fake entries.</p>
+                                </div>
+                            </div>
+                            <div class="point-item">
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Tailored Compatibility Matching</strong>
+                                    <p>Matches are prioritized according to lifestyle, career goals, family values, and preferences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 2: Redefining Modern Matchmaking (Reverse Layout) -->
+                <div class="about-split-row reverse">
+                    <div class="about-image-card">
+                        <img src="../IMAGES/couple13.jpg" alt="SoulNest Happy Couple">
+                        <div class="image-floating-badge top-right">
+                            <span><i class="ios-emoji">🔒</i></span> 100% Privacy Protected
+                        </div>
+                    </div>
+                    <div class="about-text-content">
+                        <span class="section-tag">THE SOULNEST DIFFERENCE</span>
+                        <h2>Redefining Matchmaking for the New Era</h2>
+                        <p>
+                            Unlike traditional, static matrimonial directories, SoulNest combines deep emotional compatibility with smart technology to offer high-quality connections.
+                        </p>
+                        <p>
+                            Whether you are seeking a life partner in your home city or across the globe, our multi-layered filters and relationship advisors give you complete confidence throughout your search.
+                        </p>
+                        <div class="about-points-list">
+                            <div class="point-item">
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Granular Privacy Controls</strong>
+                                    <p>Control who views your photos, phone number, and personal details at all times.</p>
+                                </div>
+                            </div>
+                            <div class="point-item">
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>Dedicated Matchmaking Guidance</strong>
+                                    <p>Friendly customer care advisors available 24/7 to guide you at every step.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Three Pillars Section -->
+        <section class="about-pillars-section">
+            <div class="about-container">
+                <div class="section-header-center">
+                    <span class="section-tag">OUR CORE PRINCIPLES</span>
+                    <h2>The Three Pillars of SoulNest</h2>
+                    <p class="section-subtitle">The foundational values that make our matchmaking reliable, secure, and successful.</p>
+                </div>
+
+                <div class="pillars-grid">
+                    <!-- Pillar 1 -->
+                    <div class="pillar-card">
+                        <div class="pillar-number">01</div>
+                        <div class="pillar-icon-box blue-grad"><i class="ios-emoji">🛡️</i></div>
+                        <h3>Strict Safety & Verification</h3>
+                        <p>
+                            Every single profile created goes through automated screening and rigorous manual verification checks to ensure an authentic, high-caliber community.
+                        </p>
+                        <div class="pillar-badge">Zero Tolerance for Spam</div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="pillar-card active-pillar">
+                        <div class="pillar-number">02</div>
+                        <div class="pillar-icon-box pink-grad"><i class="ios-emoji">💖</i></div>
+                        <h3>Smart Compatibility Matching</h3>
+                        <p>
+                            Our recommendation algorithm assesses background, lifestyle values, educational compatibility, and life aspirations to present only meaningful matches.
+                        </p>
+                        <div class="pillar-badge">98% Match Accuracy</div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="pillar-card">
+                        <div class="pillar-number">03</div>
+                        <div class="pillar-icon-box green-grad"><i class="ios-emoji">🤝</i></div>
+                        <h3>24/7 Human Relationship Support</h3>
+                        <p>
+                            Our caring relationship managers are always available to help you build your profile, navigate safety settings, and arrange genuine introductions.
+                        </p>
+                        <div class="pillar-badge">Always By Your Side</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Milestones Journey Timeline -->
+        <section class="about-timeline-section">
+            <div class="about-container">
+                <div class="section-header-center">
+                    <span class="section-tag">OUR MILESTONES</span>
+                    <h2>The SoulNest Journey</h2>
+                    <p class="section-subtitle">How we became India's most loved matrimonial brand over the years.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>The Beginning</h4>
+                            <p>Launched in Gurugram with 500 hand-verified profiles and a mission for safer matchmaking.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>Pan-India Expansion</h4>
+                            <p>Expanded into 20+ major metropolitan hubs including Mumbai, Bengaluru, and Delhi NCR.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>Smart Algorithm Rollout</h4>
+                            <p>Introduced advanced compatibility filters and instant ID verification for 100% trust.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <h4>25,000+ Happy Couples</h4>
+                            <p>Celebrating over 25,000 successful unions and a thriving nationwide family of members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Team Section -->
+        <section class="team-section">
+            <div class="about-container">
+                <div class="section-header-center">
+                    <span class="section-tag">OUR LEADERSHIP</span>
+                    <h2>Meet the Visionaries Behind SoulNest</h2>
+                    <p class="section-subtitle">Dedicated professionals passionate about uniting souls with purpose and integrity.</p>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Leader 1 -->
+                    <div class="team-card">
+                        <div class="team-image-box">
+                            <img src="" alt="Hemal Batra">
+                            <span class="team-role-tag">Founder & CEO</span>
+                        </div>
+                        <div class="team-card-info">
+                            <h3>Hemal Batra</h3>
+                            <p class="team-designation">Founder & Chief Executive Officer</p>
+                            <p class="team-bio"><b>CSE AIML 2nd Year Student </b></p>
+                               <p> Front-End Development Team </p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                                </a>
+                                <a href="#" title="Twitter" aria-label="Twitter">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 2 -->
+                    <div class="team-card">
+                        <div class="team-image-box">
+                            <img src="" alt="Uday Gupta">
+                            <span class="team-role-tag">Chief Technology Officer</span>
+                        </div>
+                        <div class="team-card-info">
+                            <h3>Uday Gupta</h3>
+                            <p class="team-designation">Chief Technology Officer</p>
+                            <p class="team-bio"><b>CSE AIML 2nd Year Student </b></p>
+                               <p> Front-End Development Team </p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                                </a>
+                                <a href="#" title="Twitter" aria-label="Twitter">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 3 -->
+                    <div class="team-card">
+                        <div class="team-image-box">
+                            <img src="" alt="Shubh Gupta">
+                            <span class="team-role-tag">Head of Safety</span>
+                        </div>
+                        <div class="team-card-info">
+                            <h3>Shubh Gupta</h3>
+                            <p class="team-designation">Head of Safety & Trust</p>
+                            <p class="team-bio"><b>CSE AIML 2nd Year Student </b></p>
+                               <p> Front-End Development Team </p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                                </a>
+                                <a href="#" title="Twitter" aria-label="Twitter">
+                                    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+         <section class="contact-banner">
+            <div class="contact-content">
+                <h2>Your Journey to Love Begins Here</h2>
+                <p>Register for free today, build your profile, and explore thousands of compatible, verified profiles.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="signup.html" class="btn" id="cta-register-btn" style="background: #fff; color: #d63384;">Create Free Profile</a>
+                    <a href="match.html" class="btn-secondary" style="border-color: #fff; color: #fff; background: transparent;">Explore Matches</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love and trust.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

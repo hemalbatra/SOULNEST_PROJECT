@@ -1,0 +1,510 @@
+/*======================================================
+   SOULNEST SUPPORT & LEGAL PAGES STYLESHEET
+   Compact, Organized & High-Readability UI
+   (Privacy Policy, Terms & Conditions, Help Center, Safety Tips)
+======================================================*/
+
+/* Support Page Hero (Compact) */
+.support-hero {
+    padding: 105px 6% 30px;
+    background: radial-gradient(circle at 50% 15%, #fff0f7 0%, #ffffff 70%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.support-hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.support-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 16px;
+    border-radius: 30px;
+    background: rgba(214, 51, 132, 0.08);
+    color: #d63384;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border: 1px solid rgba(214, 51, 132, 0.2);
+}
+
+.support-hero h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1a1e2d;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.support-hero p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.support-hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-size: 12px;
+    color: #888;
+    flex-wrap: wrap;
+}
+
+.support-hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Compact Search Bar (Help Center) */
+.support-search-wrapper {
+    max-width: 520px;
+    margin: 18px auto 0;
+    position: relative;
+}
+
+.support-search-input {
+    width: 100%;
+    padding: 13px 20px 13px 48px;
+    border-radius: 50px;
+    border: 1.5px solid #ffd2e5;
+    background: #ffffff;
+    font-size: 14.5px;
+    color: #1a1e2d;
+    box-shadow: 0 8px 24px rgba(214, 51, 132, 0.08);
+    outline: none;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.support-search-input:focus {
+    border-color: #ff5ea8;
+    box-shadow: 0 10px 28px rgba(214, 51, 132, 0.18);
+}
+
+.support-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #d63384;
+    pointer-events: none;
+}
+
+/* Interactive Tabs Navigation for Legal & Policy Pages */
+.support-tabs-wrapper {
+    max-width: 960px;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.support-tabs-bar {
+    display: inline-flex;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid #ffd2e5;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.support-tab-btn {
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.support-tab-btn:hover {
+    color: #d63384;
+}
+
+.support-tab-btn.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.35);
+}
+
+.support-tab-pane {
+    display: none;
+    animation: supportFadeIn 0.3s ease;
+}
+
+.support-tab-pane.active {
+    display: block;
+}
+
+@keyframes supportFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Document Container & Compact Cards */
+.support-doc-section {
+    padding: 30px 6% 60px;
+    background: #fafbfc;
+}
+
+.compact-doc-container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* 2-Column Grid of Structured Cards */
+.compact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.compact-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 1px solid #ffe3f0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.compact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(214, 51, 132, 0.1);
+    border-color: rgba(255, 117, 160, 0.4);
+}
+
+.compact-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.compact-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #fff0f7;
+    color: #d63384;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #ffd2e5;
+    flex-shrink: 0;
+}
+
+.compact-card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1e2d;
+    margin: 0;
+}
+
+.compact-card p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.compact-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.compact-card-list li {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.compact-card-list li::before {
+    content: "✓";
+    color: #d63384;
+    font-weight: 800;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Callout Highlights (Slim) */
+.compact-callout {
+    background: #fff8fb;
+    border-left: 3.5px solid #ff5ea8;
+    border-radius: 0 14px 14px 0;
+    padding: 14px 18px;
+    margin: 18px 0;
+}
+
+.compact-callout.warning {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+}
+
+.compact-callout.danger {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+}
+
+.compact-callout h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1e2d;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.compact-callout p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Help Center Categories Pill Strip */
+.help-category-chips {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.help-chip {
+    padding: 7px 18px;
+    border-radius: 30px;
+    border: 1px solid #ffd2e5;
+    background: #ffffff;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.help-chip:hover {
+    border-color: #d63384;
+    color: #d63384;
+}
+
+.help-chip.active {
+    background: #d63384;
+    color: #ffffff;
+    border-color: #d63384;
+    box-shadow: 0 4px 12px rgba(214, 51, 132, 0.25);
+}
+
+/* Compact Accordion */
+.faq-compact-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #ffe3f0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.faq-item.active {
+    border-color: #ff75a0;
+    box-shadow: 0 6px 20px rgba(214, 51, 132, 0.08);
+}
+
+.faq-question {
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1e2d;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+.faq-question:hover {
+    color: #d63384;
+}
+
+.faq-icon-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff0f7;
+    color: #d63384;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.faq-item.active .faq-icon-arrow {
+    transform: rotate(45deg);
+    background: #d63384;
+    color: #ffffff;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
+    color: #475569;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 220px;
+    padding: 0 20px 16px;
+}
+
+/* Red Flags Compact Checklist */
+.compact-red-flags {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 1px solid #fed7aa;
+    margin-bottom: 25px;
+}
+
+.compact-red-flags-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.compact-red-flags-header h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #b45309;
+    margin: 0;
+}
+
+.compact-flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+}
+
+.compact-flag-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    font-size: 12.5px;
+    color: #78350f;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.compact-flag-item span:first-child {
+    color: #d97706;
+    font-weight: 800;
+}
+
+/* Sleek Compact Action Banner */
+.compact-action-banner {
+    background: linear-gradient(135deg, #fff0f7, #ffe6f1);
+    border-radius: 22px;
+    padding: 24px 28px;
+    border: 1px solid #ffd2e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.compact-action-text h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #1a1e2d;
+    margin-bottom: 4px;
+}
+
+.compact-action-text p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.compact-action-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.compact-action-btns .btn,
+.compact-action-btns .btn-secondary {
+    padding: 9px 20px;
+    font-size: 12.5px;
+    border-radius: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .support-hero {
+        padding: 95px 5% 25px;
+    }
+    .support-hero h1 {
+        font-size: 24px;
+    }
+    .compact-action-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .compact-action-btns {
+        justify-content: center;
+    }
+}

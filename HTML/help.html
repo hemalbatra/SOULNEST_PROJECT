@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Help Center &amp; Support | SoulNest Matrimony</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/support.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Compact Hero -->
+        <section class="support-hero">
+            <div class="support-hero-content">
+                <div class="support-hero-badge">💡 Help &amp; FAQs</div>
+                <h1>Help Center</h1>
+                <p>Instant answers to common questions about managing your profile, finding matches, and privacy settings.</p>
+                
+                <!-- Compact Search Box -->
+                <div class="support-search-wrapper">
+                    <span class="support-search-icon">🔍</span>
+                    <input type="text" id="faq-search-input" class="support-search-input" placeholder="Type keywords (photo, shortlist, score, contact)..." autocomplete="off">
+                </div>
+            </div>
+        </section>
+
+        <!-- Compact FAQ Section -->
+        <section class="support-doc-section">
+            <div class="faq-compact-container">
+                
+                <!-- Category Filter Chips -->
+                <div class="help-category-chips">
+                    <button class="help-chip active" data-cat="all">All Topics</button>
+                    <button class="help-chip" data-cat="profile">👤 Profile &amp; Photos</button>
+                    <button class="help-chip" data-cat="matches">💍 Matches &amp; Scores</button>
+                    <button class="help-chip" data-cat="privacy">🔒 Privacy &amp; Safety</button>
+                </div>
+
+                <!-- Accordion FAQs -->
+                <div id="faq-list-container">
+                    
+                    <div class="faq-item active" data-category="profile">
+                        <div class="faq-question">
+                            <span>How do I edit my profile details or partner preferences?</span>
+                            <div class="faq-icon-arrow">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Log in and visit your <a href="dashboard.html" style="color: #ff75a0; text-decoration: underline;">Dashboard</a>. Click the <strong>"Edit Profile"</strong> button in your header banner to update personal bio, career, education, and partner preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="profile">
+                        <div class="faq-question">
+                            <span>How do I change or upload my profile picture?</span>
+                            <div class="faq-icon-arrow">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>On your Dashboard, tap the camera icon (📷) over your profile avatar. Select any photo from your device; SoulNest automatically compresses it locally to ensure fast, high-quality display.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="matches">
+                        <div class="faq-question">
+                            <span>How is the compatibility matching score computed?</span>
+                            <div class="faq-icon-arrow">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our algorithm compares your Partner Preferences with candidates across community (25%), education (20%), profession (20%), age range (15%), location (10%), and diet (10%). Synergy scores of 85%+ denote exceptional alignment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="privacy">
+                        <div class="faq-question">
+                            <span>Can any member view my phone number?</span>
+                            <div class="faq-icon-arrow">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No. By default, your contact number is masked and protected. Phone numbers are only revealed after both you and the candidate mutually accept an Express Interest request.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="privacy">
+                        <div class="faq-question">
+                            <span>How do I report or block a suspicious profile?</span>
+                            <div class="faq-icon-arrow">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Email our Trust &amp; Safety Desk at <strong>safety@soulnest.com</strong> with the member's ID or name. Reported profiles requesting money or behaving suspiciously are investigated and suspended within 2 hours.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Slim Action Banner -->
+                <div class="compact-action-banner">
+                    <div class="compact-action-text">
+                        <h4>Still Need Assistance?</h4>
+                        <p>Our human relationship managers are available daily from 9 AM to 8 PM IST.</p>
+                    </div>
+                    <div class="compact-action-btns">
+                        <a href="contact.html" class="btn">Send a Message</a>
+                        <a href="safety.html" class="btn-secondary">Safety Guide</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love, authenticity, and lifelong security.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html" style="color: #ff75a0; font-weight: 700;">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

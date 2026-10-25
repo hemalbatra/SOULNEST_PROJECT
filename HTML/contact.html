@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Contact Us | SoulNest</title>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('soulNestLoggedIn') === 'true') {
+                    document.documentElement.classList.add('user-logged-in');
+                } else {
+                    document.documentElement.classList.add('user-logged-out');
+                }
+                var savedTheme = localStorage.getItem('soulNestTheme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme !== 'light') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../IMAGES/favicon.svg">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="brand-heart">♥</span> SoulNest</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="stories.html">Success Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active-nav">Contact</a></li>
+                <li class="nav-theme-item">
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Switch light/dark theme">
+                        <span class="theme-toggle-icon"><svg class="theme-svg theme-svg-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+                    </button>
+                </li>
+                <li class="nav-auth-login"><a href="signin.html" class="nav-btn" id="nav-signin">Sign In</a></li>
+                <li class="nav-auth-logout"><a href="logout.html" class="nav-logout-btn" id="nav-logout">Logout</a></li>
+                <li class="nav-profile-item">
+                    <a href="dashboard.html" class="nav-profile-btn" id="nav-profile-btn" title="My Profile Dashboard">
+                        <img src="../IMAGES/profile_male1.png" alt="Profile Picture" class="nav-profile-pic" id="nav-profile-pic">
+                        <span class="nav-profile-name" id="nav-profile-name">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Page Section -->
+        <section class="contact-section">
+            <div class="contact-hero-header">
+                <span class="contact-pill-tag">WE'RE HERE TO HELP YOU FIND LOVE</span>
+                <h1>Let's Connect & <span>Start Your Story</span></h1>
+                <p class="contact-hero-subtitle">
+                    Have questions about registration, membership, safety verification, or personalized matchmaking? Our friendly team is here for you 24/7.
+                </p>
+
+                <!-- Quick Response Channels Strip -->
+                <div class="contact-channels-strip">
+                    <div class="channel-item">
+                        <span class="channel-icon"><i class="ios-emoji">📞</i></span>
+                        <div>
+                            <strong>Toll-Free Helpline</strong>
+                            <small>1800-200-7685 (24x7)</small>
+                        </div>
+                    </div>
+                    <div class="channel-divider"></div>
+                    <div class="channel-item">
+                        <span class="channel-icon"><i class="ios-emoji">💬</i></span>
+                        <div>
+                            <strong>Instant WhatsApp</strong>
+                            <small>+91 98765-43210</small>
+                        </div>
+                    </div>
+                    <div class="channel-divider"></div>
+                    <div class="channel-item">
+                        <span class="channel-icon"><i class="ios-emoji">⚡</i></span>
+                        <div>
+                            <strong>Quick Response</strong>
+                            <small>Under 15 Minutes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-wrapper">
+                    
+                    <!-- Left Side: Contact Information Cards -->
+                    <div class="contact-info">
+                        <div class="info-box-header">
+                            <span class="info-tag">DIRECT CHANNELS</span>
+                            <h2>Get In Touch With Us</h2>
+                            <p>Choose your preferred channel to reach out to our counselors and relationship managers.</p>
+                        </div>
+
+                        <!-- Card 1: Headquarters -->
+                        <div class="info-card">
+                            <div class="info-card-icon pink-grad"><i class="ios-emoji">📍</i></div>
+                            <div class="info-details">
+                                <h3>Corporate Headquarters</h3>
+                                <p>Building 10B, 6th Floor, DLF Cyber City, Sector 24, Gurugram, Haryana 122002, India</p>
+                                <span class="info-sub-badge">Visiting Hours: Mon - Sat (9:30 AM - 7:00 PM)</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Phone & WhatsApp -->
+                        <div class="info-card">
+                            <div class="info-card-icon green-grad"><i class="ios-emoji">📞</i></div>
+                            <div class="info-details">
+                                <h3>Phone & Counselor Support</h3>
+                                <p><strong>Toll-Free:</strong> +91 (124) 456-7890<br><strong>NRI & International:</strong> +1 (800) 555-0199</p>
+                                <span class="info-sub-badge green-badge">24/7 Counselor Helpline Active</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Direct Email Support -->
+                        <div class="info-card">
+                            <div class="info-card-icon blue-grad"><i class="ios-emoji">✉️</i></div>
+                            <div class="info-details">
+                                <h3>Department Email Inquiries</h3>
+                                <p><strong>General Support:</strong> support@soulnest.com<br><strong>ID & Safety Verification:</strong> verify@soulnest.com</p>
+                                <span class="info-sub-badge blue-badge">Response within 2 hours</span>
+                            </div>
+                        </div>
+
+                        <!-- Advisory Trust Banner -->
+                        <div class="counselor-trust-card">
+                            <div class="trust-icon-box"><i class="ios-emoji">🤝</i></div>
+                            <div class="trust-content">
+                                <div class="trust-top-badge">
+                                    <span class="trust-pill">FREE 1-ON-1 ADVISORY</span>
+                                </div>
+                                <h4>Need Personalized Matchmaking?</h4>
+                                <p>Book a free 1-on-1 consultation session with our certified relationship advisor.</p>
+                                <button type="button" class="btn-advisor-action" id="btn-advisor-consult">
+                                    Book Free Consultation <span>➔</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Contact Form -->
+                    <div class="contact-form-container">
+                        <div class="form-title-bar">
+                            <span class="info-tag">SEND A MESSAGE</span>
+                            <h2>Send Us an Inquiry</h2>
+                            <p>Fill in the details below and our relationship specialist will get back to you promptly.</p>
+                        </div>
+
+                        <form class="contact-form">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="name">Your Full Name <span class="req">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone / Mobile <span class="req">*</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="e.g. +91 98765 43210" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="req">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="e.g. rahul@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inquiry-type">Inquiry Topic</label>
+                                    <div class="custom-select-wrap">
+                                        <select id="inquiry-type" name="inquiry-type">
+                                            <option value="general">General Matchmaking Inquiry</option>
+                                            <option value="verification">Profile ID & Document Verification</option>
+                                            <option value="advisor">Request Personal Matchmaking Advisor</option>
+                                            <option value="feedback">Safety Feedback or Report Profile</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject Line <span class="req">*</span></label>
+                                <input type="text" id="subject" name="subject" placeholder="Brief summary of your inquiry..." required>
+                            </div>
+
+                            <div class="form-group message-group">
+                                <label for="message">Your Message / Query <span class="req">*</span></label>
+                                <textarea id="message" name="message" placeholder="Please describe how we can assist you with your matchmaking journey..." required></textarea>
+                            </div>
+
+                            <div class="form-bottom-action">
+                                <button type="submit" class="btn contact-submit-btn">
+                                    Send Your Message
+                                </button>
+                                <p class="form-privacy-note">Your information is confidential and protected by SoulNest Privacy Policy.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick FAQs Section -->
+        <section class="contact-faq-section">
+            <div class="contact-container">
+                <div class="section-header-center">
+                    <span class="info-tag">QUICK ASSISTANCE</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions about our platform and assistance.</p>
+                </div>
+
+                <div class="contact-faq-grid">
+                    <div class="faq-box">
+                        <span class="faq-icon"><i class="ios-emoji">🕒</i></span>
+                        <h3>What are your support operating hours?</h3>
+                        <p>Our telephone helpline and online messaging desk are operational 24 hours a day, 7 days a week.</p>
+                    </div>
+                    <div class="faq-box">
+                        <span class="faq-icon"><i class="ios-emoji">🛡️</i></span>
+                        <h3>How does manual profile verification work?</h3>
+                        <p>Our safety compliance team manually reviews submitted photo identification within 12 to 24 hours.</p>
+                    </div>
+                    <div class="faq-box">
+                        <span class="faq-icon"><i class="ios-emoji">🤝</i></span>
+                        <h3>Can I request a personalized advisor?</h3>
+                        <p>Yes. Premium members get a dedicated personal matchmaker who coordinates verified family introductions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2><span class="brand-heart">♥</span> SoulNest</h2>
+                <p>Where Hearts Find Home.</p>
+                <p>India's trusted matrimonial platform connecting hearts with love and trust.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="safety.html">Safety Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0-.01-2.9 1.45 1.45 0 0 0 .01 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            © 2026 SoulNest. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1770 @@
+/*==================================================================
+   SOULNEST MASTER DARK THEME ENGINE - THE ULTIMATE LUXURY UI
+   Ultra-Refined Midnight Obsidian Theme with Romantic Rose & Emerald Accents
+   Ensures seamless unified dark background and harmonious high-contrast text
+==================================================================*/
+
+:root[data-theme="dark"],
+html.dark-theme {
+    color-scheme: dark;
+    --sn-bg-base: #0c0e17;
+    --sn-bg-card: #141724;
+    --sn-bg-elevated: #1a1e30;
+    --sn-bg-hover: #1e2338;
+    --sn-border: rgba(255, 255, 255, 0.08);
+    --sn-border-focus: rgba(255, 117, 160, 0.4);
+    --sn-text-heading: #f8fafc;
+    --sn-text-body: #94a3b8;
+    --sn-text-sub: #cbd5e1;
+    --sn-pink-primary: #d63384;
+    --sn-pink-glow: #ff75a0;
+    --sn-teal-accent: #2ec4b6;
+    --sn-gold-accent: #ffd166;
+}
+
+/* Base Body & Layout */
+html.dark-theme,
+html.dark-theme body {
+    background: #0c0e17 !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme body::before {
+    background: rgba(214, 51, 132, 0.08) !important;
+}
+
+html.dark-theme body::after {
+    background: rgba(114, 9, 183, 0.08) !important;
+}
+
+/* Custom Sleek Obsidian Scrollbars */
+html.dark-theme ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: #0c0e17;
+}
+
+html.dark-theme ::-webkit-scrollbar-track {
+    background: #0c0e17;
+}
+
+html.dark-theme ::-webkit-scrollbar-thumb {
+    background: #242940;
+    border-radius: 6px;
+    border: 2px solid #0c0e17;
+}
+
+html.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: #ff5ea8;
+}
+
+/* Master Typography System */
+html.dark-theme h1,
+html.dark-theme h2,
+html.dark-theme h3,
+html.dark-theme h4,
+html.dark-theme h5,
+html.dark-theme h6,
+html.dark-theme strong,
+html.dark-theme b {
+    color: #f8fafc !important;
+}
+
+html.dark-theme p,
+html.dark-theme .section-subtitle,
+html.dark-theme .contact-hero-subtitle,
+html.dark-theme .about-hero-subtitle,
+html.dark-theme .matches-hero-header .section-subtitle,
+html.dark-theme .signup-text,
+html.dark-theme .form-privacy-note,
+html.dark-theme .preview-sub,
+html.dark-theme .preview-meta,
+html.dark-theme .story-excerpt,
+html.dark-theme .faq-box p,
+html.dark-theme .faq-card p,
+html.dark-theme .info-details p,
+html.dark-theme .channel-item small,
+html.dark-theme .match-stat-item small,
+html.dark-theme .stat-item small,
+html.dark-theme .about-stat-item small,
+html.dark-theme .lock-card p,
+html.dark-theme .logout-container p,
+html.dark-theme .logout-confirm-desc,
+html.dark-theme .overview-label,
+html.dark-theme .chips-title,
+html.dark-theme .strength-text,
+html.dark-theme .signin-link,
+html.dark-theme .form-title-bar p,
+html.dark-theme .info-box-header p,
+html.dark-theme .counselor-trust-card p,
+html.dark-theme .lock-trust-note,
+html.dark-theme .hero p,
+html.dark-theme .card p,
+html.dark-theme .newsletter p,
+html.dark-theme .copyright,
+html.dark-theme .dash-user-meta {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme h1 span,
+html.dark-theme h2 span,
+html.dark-theme h3 span,
+html.dark-theme .brand-heart,
+html.dark-theme .hero h1 span,
+html.dark-theme .matches-hero-header h1 span,
+html.dark-theme .stories-hero h1 span,
+html.dark-theme .contact-hero-header h1 span,
+html.dark-theme .about-hero h1 span {
+    background: linear-gradient(135deg, #ff75a0, #d63384) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* All Pills, Badges & Tags */
+html.dark-theme .contact-pill-tag,
+html.dark-theme .about-pill-tag,
+html.dark-theme .matches-pill-tag,
+html.dark-theme .stories-pill-tag,
+html.dark-theme .welcome-tag,
+html.dark-theme .section-tag,
+html.dark-theme .info-tag,
+html.dark-theme .lock-pill-tag,
+html.dark-theme .results-counter,
+html.dark-theme .tagline,
+html.dark-theme .trust-pill {
+    background: rgba(214, 51, 132, 0.15) !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.28) !important;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.15) !important;
+}
+
+html.dark-theme .match-info-pill,
+html.dark-theme .filter-pill,
+html.dark-theme .hobby-tag,
+html.dark-theme .story-tag,
+html.dark-theme .info-sub-badge,
+html.dark-theme .info-sub-badge.green-badge,
+html.dark-theme .info-sub-badge.blue-badge {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .btn-secondary {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+    transition: all 0.25s ease !important;
+}
+
+html.dark-theme .btn-secondary:hover {
+    background: #242a42 !important;
+    color: #ffffff !important;
+    border-color: #ff75a0 !important;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.25) !important;
+}
+
+/* Master Navigation Bar */
+html.dark-theme header,
+html.dark-theme nav {
+    background: rgba(12, 14, 23, 0.94) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme nav ul li a {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme nav ul li a:hover,
+html.dark-theme nav ul li a.active-nav {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .nav-menu {
+    background: rgba(12, 14, 23, 0.98) !important;
+}
+
+html.dark-theme .logo {
+    color: #ff75a0 !important;
+}
+
+/*==================================================
+   MINIMAL LUXURY THEME TOGGLE (DARK THEME)
+==================================================*/
+html.dark-theme .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #94a3b8 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.dark-theme .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-theme .theme-toggle-btn:focus-visible {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 0 0 2px rgba(255, 117, 160, 0.3) !important;
+}
+
+html.dark-theme .theme-toggle-btn:active {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .theme-toggle-btn .theme-toggle-icon {
+    filter: none !important;
+}
+
+html.dark-theme .nav-logout-btn {
+    background: linear-gradient(135deg, rgba(42, 22, 32, 0.88), rgba(28, 16, 24, 0.92)) !important;
+    border: 1px solid rgba(255, 77, 109, 0.35) !important;
+    color: #ff758f !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .nav-logout-btn:hover {
+    background: linear-gradient(135deg, #ff4d6d, #c9184a) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 24px rgba(255, 77, 109, 0.38), 0 0 0 3px rgba(255, 77, 109, 0.2) !important;
+}
+
+/*==================================================
+   REFINED ACCOUNT CHIP (DARK THEME)
+==================================================*/
+html.dark-theme .nav-profile-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.dark-theme .nav-profile-pic {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: #141724 !important;
+    box-shadow: none !important;
+}
+
+html.dark-theme .nav-profile-name {
+    color: #e2e8f0 !important;
+}
+
+html.dark-theme .nav-profile-btn::after {
+    background-color: #10b981 !important;
+    box-shadow: none !important;
+}
+
+html.dark-theme .nav-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-theme .nav-profile-btn:hover .nav-profile-name {
+    color: #ffffff !important;
+}
+
+html.dark-theme .nav-profile-btn:focus-visible {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 0 0 2px rgba(255, 117, 160, 0.3) !important;
+}
+
+html.dark-theme .nav-profile-btn:active {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .nav-profile-btn.active-nav-profile,
+html.dark-theme .nav-profile-btn.active {
+    background: rgba(255, 117, 160, 0.1) !important;
+    border-color: rgba(255, 117, 160, 0.3) !important;
+}
+
+html.dark-theme .nav-profile-btn.active-nav-profile .nav-profile-name,
+html.dark-theme .nav-profile-btn.active .nav-profile-name {
+    color: #ff75a0 !important;
+}
+
+/* Master Hero & Homepage Sections */
+html.dark-theme .hero {
+    background: #0c0e17 !important;
+}
+
+html.dark-theme .hero::before {
+    background: rgba(214, 51, 132, 0.12) !important;
+}
+
+html.dark-theme .hero::after {
+    background: rgba(114, 9, 183, 0.12) !important;
+}
+
+html.dark-theme .hero-image img {
+    border: 4px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 40px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .hero-image::before {
+    background: radial-gradient(circle, rgba(255, 94, 168, 0.2) 0%, rgba(214, 51, 132, 0.08) 45%, rgba(0, 0, 0, 0) 70%) !important;
+}
+
+html.dark-theme .floating-card {
+    background: rgba(20, 23, 36, 0.94) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    color: #f8fafc !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .floating-card:hover {
+    background: #1a1e30 !important;
+    border-color: #ff75a0 !important;
+    box-shadow: 0 20px 45px rgba(214, 51, 132, 0.25) !important;
+}
+
+/* All Main Page Sections Full Dark Background */
+html.dark-theme .contact-section,
+html.dark-theme .contact-faq-section,
+html.dark-theme .about-hero,
+html.dark-theme .about-story-section,
+html.dark-theme .about-pillars-section,
+html.dark-theme .about-timeline-section,
+html.dark-theme .mission-vision-section,
+html.dark-theme .values-section,
+html.dark-theme .team-section,
+html.dark-theme .matches-section,
+html.dark-theme .dashboard-section,
+html.dark-theme .stories-hero,
+html.dark-theme .signup-section,
+html.dark-theme .logout-section,
+html.dark-theme .features,
+html.dark-theme .how,
+html.dark-theme .success,
+html.dark-theme .faq,
+html.dark-theme .newsletter,
+html.dark-theme .trust-section,
+html.dark-theme .cta,
+html.dark-theme section,
+html.dark-theme main {
+    background: #0c0e17 !important;
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Master Cards, Containers & Glassmorphism Surfaces */
+html.dark-theme .contact-channels-strip,
+html.dark-theme .info-card,
+html.dark-theme .counselor-trust-card,
+html.dark-theme .contact-form-container,
+html.dark-theme .faq-box,
+html.dark-theme .faq-card,
+html.dark-theme .office-card,
+html.dark-theme .about-stats-strip,
+html.dark-theme .about-card,
+html.dark-theme .point-item,
+html.dark-theme .pillar-card,
+html.dark-theme .timeline-card,
+html.dark-theme .mission-card,
+html.dark-theme .vision-card,
+html.dark-theme .value-card,
+html.dark-theme .team-card,
+html.dark-theme .trust-card,
+html.dark-theme .match-stats-strip,
+html.dark-theme .matches-filter-hub,
+html.dark-theme .matches-view-tabs,
+html.dark-theme .matches-filter-bar,
+html.dark-theme .match-card,
+html.dark-theme .preview-card,
+html.dark-theme .lock-card,
+html.dark-theme .dashboard-profile-banner,
+html.dark-theme .dashboard-tabs-bar,
+html.dark-theme .dash-card,
+html.dark-theme .dash-box,
+html.dark-theme .dash-header-card,
+html.dark-theme .dash-stat-box,
+html.dark-theme .dash-section-card,
+html.dark-theme .dash-shortlist-card,
+html.dark-theme .interest-row,
+html.dark-theme .stories-gallery .card,
+html.dark-theme .card,
+html.dark-theme .signup-container,
+html.dark-theme .signup-right,
+html.dark-theme .logout-container,
+html.dark-theme .feature-box,
+html.dark-theme .step-card,
+html.dark-theme .testimonial-card,
+html.dark-theme .modal-card,
+html.dark-theme .modal-dialog-content,
+html.dark-theme .edit-modal-content,
+html.dark-theme .story-modal-card,
+html.dark-theme .logout-confirm-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .info-card:hover,
+html.dark-theme .faq-box:hover,
+html.dark-theme .faq-card:hover,
+html.dark-theme .counselor-trust-card:hover,
+html.dark-theme .match-card:hover,
+html.dark-theme .about-card:hover,
+html.dark-theme .point-item:hover,
+html.dark-theme .pillar-card:hover,
+html.dark-theme .timeline-card:hover,
+html.dark-theme .value-card:hover,
+html.dark-theme .team-card:hover,
+html.dark-theme .stories-gallery .card:hover,
+html.dark-theme .card:hover,
+html.dark-theme .feature-box:hover,
+html.dark-theme .step-card:hover {
+    background: #181c2e !important;
+    border-color: rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 20px 48px rgba(214, 51, 132, 0.2) !important;
+}
+
+/* About Page - Feature & Value Point Items */
+html.dark-theme .point-item {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+html.dark-theme .point-item:hover {
+    background: #181c2e !important;
+    border-color: rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 14px 32px rgba(214, 51, 132, 0.2) !important;
+    transform: translateX(8px) !important;
+}
+
+html.dark-theme .point-item strong {
+    color: #f8fafc !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+}
+
+html.dark-theme .point-item p {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+}
+
+html.dark-theme .check-icon {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(214, 51, 132, 0.45) !important;
+}
+
+/* About Page - Pillars, Badges & Image Cards */
+html.dark-theme .about-image-card img {
+    border: 4px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme .image-floating-badge {
+    background: rgba(20, 23, 36, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .pillar-card.active-pillar {
+    border: 2px solid #ff75a0 !important;
+    box-shadow: 0 20px 50px rgba(214, 51, 132, 0.25) !important;
+}
+
+html.dark-theme .pillar-number {
+    color: rgba(255, 117, 160, 0.22) !important;
+}
+
+html.dark-theme .pillar-badge {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.28) !important;
+}
+
+html.dark-theme .timeline-card h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .timeline-dot {
+    border: 4px solid #141724 !important;
+    box-shadow: 0 0 0 6px rgba(214, 51, 132, 0.25) !important;
+}
+
+html.dark-theme .team-role-tag {
+    background: rgba(20, 23, 36, 0.92) !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.28) !important;
+}
+
+html.dark-theme .team-card-info h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .team-designation {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .team-bio {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .team-socials a {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .team-socials a:hover {
+    background: #ff5ea8 !important;
+    color: #ffffff !important;
+}
+
+/* Dashboard Profile Completion Checklist */
+html.dark-theme .complete-progress-wrapper {
+    background: #181c2e !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .complete-progress-bar-bg {
+    background: #242940 !important;
+}
+
+html.dark-theme .progress-label {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .complete-checklist-title {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .complete-check-item.done {
+    background: rgba(34, 197, 94, 0.12) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+    color: #4ade80 !important;
+}
+
+html.dark-theme .complete-check-item.missing {
+    background: rgba(214, 51, 132, 0.12) !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+    color: #ff75a0 !important;
+}
+
+/* Card Header Ribbons, Bodies & Quote Bubbles */
+html.dark-theme .card-header-ribbon {
+    background: #181c2e !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html.dark-theme .match-card-body {
+    background: #141724 !important;
+}
+
+html.dark-theme .match-quote-bubble {
+    background: #181c2e !important;
+    color: #94a3b8 !important;
+    border-left: 3px solid #ff75a0 !important;
+}
+
+html.dark-theme .card-bookmark-btn {
+    background: #1a1e30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .card-bookmark-btn:hover {
+    background: #d63384 !important;
+    color: #fff !important;
+}
+
+/* Step Badges and Heart Decors in Success Stories */
+html.dark-theme .step-badge {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(214, 51, 132, 0.35) !important;
+}
+
+html.dark-theme .success .card::after {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Statistics Section */
+html.dark-theme .statistics {
+    background: linear-gradient(135deg, #181b2e, #141724) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .statistics .card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Contact Banner / CTA Banner */
+html.dark-theme .contact-banner {
+    background: linear-gradient(135deg, #1a1528, #2a142c) !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .contact-banner .btn {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4) !important;
+}
+
+/* View Mode Tabs (Matches Page) */
+html.dark-theme .view-tab {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .view-tab:hover {
+    color: #ff75a0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark-theme .view-tab.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(214, 51, 132, 0.4) !important;
+}
+
+html.dark-theme .tab-badge {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .view-tab.active .tab-badge {
+    background: #ffffff !important;
+    color: #d63384 !important;
+}
+
+/*======================================================
+   DASHBOARD / MY PROFILE COMPREHENSIVE DARK THEME
+======================================================*/
+
+/* 1. Dashboard Profile Header Banner */
+html.dark-theme .dashboard-profile-banner {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55) !important;
+}
+
+html.dark-theme .dashboard-avatar-wrap img {
+    border: 4px solid #141724 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(214, 51, 132, 0.3) !important;
+}
+
+html.dark-theme .avatar-edit-badge {
+    background: #1a1e30 !important;
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ff75a0 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .avatar-edit-badge:hover {
+    background: #d63384 !important;
+    border-color: #ff75a0 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(214, 51, 132, 0.5) !important;
+}
+
+html.dark-theme .avatar-verified-badge {
+    border: 3px solid #141724 !important;
+    box-shadow: 0 4px 14px rgba(46, 196, 182, 0.4) !important;
+}
+
+html.dark-theme .member-id-pill {
+    background: rgba(255, 94, 168, 0.12) !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(214, 51, 132, 0.15) !important;
+}
+
+html.dark-theme .banner-name-row h1 {
+    color: #f8fafc !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .status-active-badge {
+    background: rgba(46, 196, 182, 0.15) !important;
+    color: #2ec4b6 !important;
+    border: 1px solid rgba(46, 196, 182, 0.35) !important;
+    box-shadow: 0 2px 10px rgba(46, 196, 182, 0.15) !important;
+}
+
+html.dark-theme .banner-job-location {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .banner-pill {
+    background: #181c2e !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.25s ease !important;
+}
+
+html.dark-theme .banner-pill:hover {
+    background: #20263e !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 117, 160, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+html.dark-theme .banner-bio-excerpt {
+    background: #181c2e !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-left: 3px solid #ff75a0 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Profile Strength Widget Card */
+html.dark-theme .strength-card {
+    background: #181c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html.dark-theme .strength-header h4 {
+    color: #f8fafc !important;
+    font-weight: 700 !important;
+}
+
+html.dark-theme .strength-percentage {
+    color: #2ec4b6 !important;
+    text-shadow: 0 0 12px rgba(46, 196, 182, 0.35) !important;
+}
+
+html.dark-theme .progress-bar-bg {
+    background: #10121d !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html.dark-theme .progress-bar-fill {
+    background: linear-gradient(90deg, #ff5ea8, #2ec4b6) !important;
+    box-shadow: 0 0 10px rgba(46, 196, 182, 0.5) !important;
+}
+
+html.dark-theme .strength-tip {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .banner-actions-wrap .edit-profile-btn {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(214, 51, 132, 0.35) !important;
+    font-weight: 700 !important;
+}
+
+html.dark-theme .banner-actions-wrap .edit-profile-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(214, 51, 132, 0.55) !important;
+}
+
+html.dark-theme .banner-actions-wrap .view-matches-btn {
+    background: #10121d !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    font-weight: 700 !important;
+}
+
+html.dark-theme .banner-actions-wrap .view-matches-btn:hover {
+    background: #242a42 !important;
+    color: #ffffff !important;
+    border-color: #ff75a0 !important;
+}
+
+/* Incomplete Profile Alert Banner */
+html.dark-theme .profile-complete-alert-banner {
+    background: linear-gradient(135deg, #1f1b26, #1a1622) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html.dark-theme .profile-complete-alert-banner h4 {
+    color: #fbbf24 !important;
+}
+
+html.dark-theme .profile-complete-alert-banner p {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .alert-banner-btn {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Stat Boxes & Floating Stat Icons */
+html.dark-theme .dashboard-stats-strip {
+    background: transparent !important;
+}
+
+html.dark-theme .dash-stat-box {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .dash-stat-box:hover {
+    background: #181c2e !important;
+    border-color: rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 16px 36px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .dash-stat-icon {
+    background: #1a1e30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-theme .dash-stat-details strong {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .dash-stat-details small {
+    color: #94a3b8 !important;
+}
+
+/* Dashboard Tab Bar & Tab Buttons */
+html.dark-theme .dashboard-tabs-bar {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .dash-tab {
+    background: transparent !important;
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .dash-tab:hover {
+    color: #ff75a0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark-theme .dash-tab.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(214, 51, 132, 0.35) !important;
+}
+
+/* Main Profile Dashboard Cards */
+html.dark-theme .dash-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .dash-card-header {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .dash-card-header h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .btn-sm-edit {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(214, 51, 132, 0.4) !important;
+}
+
+html.dark-theme .btn-sm-edit:hover {
+    background: #d63384 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.35) !important;
+}
+
+/* Details Grid & Field Boxes */
+html.dark-theme .dash-detail-item {
+    background: #181c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .dash-detail-item:hover {
+    border-color: rgba(255, 117, 160, 0.25) !important;
+    background: #1c2236 !important;
+}
+
+html.dark-theme .dash-detail-item label {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .dash-detail-item p {
+    color: #f8fafc !important;
+    font-weight: 600 !important;
+}
+
+/* Bio Statement & Hobbies */
+html.dark-theme #disp-bio-full {
+    background: #181c2e !important;
+    color: #cbd5e1 !important;
+    border-left: 4px solid #ff75a0 !important;
+}
+
+html.dark-theme .hobby-tag {
+    background: #181c2e !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+}
+
+/* Empty States across Dashboard & Matches Hub (Shortlist, Sent Interests, Filters) */
+html.dark-theme .matches-empty-state {
+    background: #141724 !important;
+    border: 2px dashed rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45) !important;
+    border-radius: 28px !important;
+    color: #cbd5e1 !important;
+    text-align: center !important;
+    padding: 60px 30px !important;
+}
+
+html.dark-theme .matches-empty-state h3 {
+    color: #f8fafc !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .matches-empty-state p {
+    color: #94a3b8 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    max-width: 540px !important;
+    margin: 0 auto 24px !important;
+}
+
+html.dark-theme .empty-state-icon {
+    font-size: 56px !important;
+    margin-bottom: 16px !important;
+    filter: drop-shadow(0 4px 18px rgba(214, 51, 132, 0.45)) !important;
+}
+
+html.dark-theme .matches-empty-state .btn,
+html.dark-theme .matches-empty-state .browse-all-matches-btn {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4) !important;
+    font-weight: 700 !important;
+    transition: transform 0.25s, box-shadow 0.25s !important;
+}
+
+html.dark-theme .matches-empty-state .btn:hover,
+html.dark-theme .matches-empty-state .browse-all-matches-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(214, 51, 132, 0.55) !important;
+}
+
+html.dark-theme .matches-empty-state .btn-secondary,
+html.dark-theme .matches-empty-state .empty-reset-filters-btn {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1.5px solid rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+html.dark-theme .matches-empty-state .btn-secondary:hover,
+html.dark-theme .matches-empty-state .empty-reset-filters-btn:hover {
+    background: rgba(255, 117, 160, 0.15) !important;
+    color: #ffffff !important;
+    border-color: #ff75a0 !important;
+}
+
+/* Shortlist & Interests in Dashboard */
+html.dark-theme .dash-shortlist-grid {
+    background: transparent !important;
+}
+
+html.dark-theme .dash-shortlist-card {
+    background: #181c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .dash-shortlist-card:hover {
+    background: #1c2236 !important;
+    border-color: rgba(255, 117, 160, 0.35) !important;
+    box-shadow: 0 16px 35px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .dash-shortlist-card h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .dash-shortlist-card p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .dash-shortlist-meta {
+    color: #ff75a0 !important;
+    font-weight: 600 !important;
+}
+
+html.dark-theme .dash-shortlist-avatar {
+    border: 3px solid #141724 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .dash-shortlist-actions .btn-secondary,
+html.dark-theme .dash-btn-view {
+    background: #1a1e30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .dash-shortlist-actions .btn-secondary:hover,
+html.dark-theme .dash-btn-view:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-color: #ff75a0 !important;
+}
+
+html.dark-theme .dash-btn-remove {
+    color: #ff6b8b !important;
+    border: 1px solid rgba(244, 63, 94, 0.35) !important;
+    background: rgba(244, 63, 94, 0.12) !important;
+}
+
+html.dark-theme .dash-btn-remove:hover {
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    border-color: #e11d48 !important;
+}
+
+html.dark-theme .interest-row {
+    background: #181c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.dark-theme .interest-candidate-info img {
+    border: 2px solid #141724 !important;
+}
+
+html.dark-theme .interest-candidate-text h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .interest-candidate-text p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .interest-status-pill.sent {
+    background: rgba(46, 196, 182, 0.15) !important;
+    color: #2ec4b6 !important;
+    border: 1px solid rgba(46, 196, 182, 0.3) !important;
+}
+
+html.dark-theme .interest-status-pill.accepted {
+    background: rgba(214, 51, 132, 0.15) !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+}
+
+html.dark-theme .btn-cancel-interest {
+    color: #ff6b8b !important;
+    border: 1px solid rgba(244, 63, 94, 0.35) !important;
+    background: rgba(244, 63, 94, 0.12) !important;
+}
+
+html.dark-theme .btn-cancel-interest:hover {
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    border-color: #e11d48 !important;
+}
+
+html.dark-theme .dash-card > p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .dash-card-header .btn-secondary {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .dash-card-header .btn-secondary:hover {
+    background: rgba(255, 117, 160, 0.15) !important;
+    color: #ff75a0 !important;
+    border-color: #ff75a0 !important;
+}
+
+/* Privacy Settings & Switches */
+html.dark-theme .setting-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .setting-row strong {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .setting-row p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme #setting-photo-privacy {
+    background: #1a1e32 !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+html.dark-theme #setting-photo-privacy:focus {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 0 14px rgba(255, 117, 160, 0.35) !important;
+}
+
+html.dark-theme .switch-label {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme div[style*="border-top: 1px dashed"] {
+    border-top: 1px dashed rgba(255, 117, 160, 0.25) !important;
+}
+
+html.dark-theme a[href="logout.html"].btn-secondary {
+    background: rgba(244, 63, 94, 0.12) !important;
+    color: #ff6b8b !important;
+    border: 1px solid rgba(244, 63, 94, 0.35) !important;
+}
+
+html.dark-theme a[href="logout.html"].btn-secondary:hover {
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    border-color: #e11d48 !important;
+}
+
+/* Dashboard Modals & Forms */
+html.dark-theme .form-section-title {
+    color: #ff75a0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .modal-form-grid label {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .modal-form-grid input,
+html.dark-theme .modal-form-grid select {
+    background: #1a1e32 !important;
+    color: #f8fafc !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .modal-form-grid input:focus,
+html.dark-theme .modal-form-grid select:focus {
+    border-color: #ff75a0 !important;
+    background: #20263e !important;
+    box-shadow: 0 0 16px rgba(255, 117, 160, 0.35) !important;
+}
+
+html.dark-theme .preset-avatar {
+    border: 3px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .preset-avatar.active {
+    border: 3px solid #ff75a0 !important;
+    box-shadow: 0 0 20px rgba(255, 117, 160, 0.4) !important;
+}
+
+html.dark-theme .avatar-edit-badge {
+    background: #1a1e30 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ff75a0 !important;
+}
+
+/* Stories Filter Buttons */
+html.dark-theme .filter-btn {
+    background: #141724 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .filter-btn:hover {
+    border-color: #ff75a0 !important;
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .filter-btn.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+    border-color: #d63384 !important;
+    box-shadow: 0 8px 24px rgba(214, 51, 132, 0.35) !important;
+}
+
+/* Lock Card & Benefits (Logged Out Matches) */
+html.dark-theme .lock-overlay {
+    background: radial-gradient(circle, rgba(12, 14, 23, 0.9) 0%, rgba(12, 14, 23, 0.7) 100%) !important;
+}
+
+html.dark-theme .lock-benefits {
+    background: #181c2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .lock-benefit-item {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .lock-btn-secondary {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border-color: rgba(214, 51, 132, 0.5) !important;
+}
+
+/* Master Form Controls & Inputs */
+html.dark-theme input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+html.dark-theme select,
+html.dark-theme textarea {
+    background: #1a1e32 !important;
+    color: #f8fafc !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+    box-sizing: border-box !important;
+}
+
+html.dark-theme input:focus,
+html.dark-theme select:focus,
+html.dark-theme textarea:focus {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 0 16px rgba(255, 117, 160, 0.35) !important;
+    background: #20263e !important;
+}
+
+html.dark-theme input::placeholder,
+html.dark-theme textarea::placeholder {
+    color: #64748b !important;
+}
+
+html.dark-theme option {
+    background-color: #141724 !important;
+    color: #f8fafc !important;
+}
+
+html.dark-theme .form-group label,
+html.dark-theme .filter-control label {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .custom-select-wrap select {
+    background-color: #1a1e32 !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .filter-chips-row {
+    border-top: 1px dashed rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .filter-chip {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .filter-chip.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #fff !important;
+}
+
+/* Secondary Buttons */
+html.dark-theme .btn-secondary,
+html.dark-theme #reset-filters-btn {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .btn-secondary:hover,
+html.dark-theme #reset-filters-btn:hover {
+    background: #242a42 !important;
+    color: #ffffff !important;
+    border-color: #ff75a0 !important;
+}
+
+/* Modals & Popups */
+html.dark-theme .modal,
+html.dark-theme .story-modal,
+html.dark-theme .logout-confirm-overlay {
+    background: rgba(8, 9, 15, 0.88) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+}
+
+html.dark-theme .modal-close,
+html.dark-theme #modal-close,
+html.dark-theme #story-modal-close,
+html.dark-theme #edit-modal-close,
+html.dark-theme .logout-confirm-close {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .logout-confirm-cancel-btn {
+    background: #1a1e30 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .logout-confirm-cancel-btn:hover {
+    background: #242a42 !important;
+    color: #fff !important;
+}
+
+/* Icons & Secondary Circles */
+html.dark-theme .channel-icon,
+html.dark-theme .faq-icon,
+html.dark-theme .stat-icon {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .channel-divider,
+html.dark-theme .about-stat-divider,
+html.dark-theme .match-stat-divider {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Password Toggle & Strength Meter */
+html.dark-theme .btn-toggle-password {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .strength-bar-track {
+    background: #1a1e30 !important;
+}
+
+/* Logout Spinner */
+html.dark-theme .spinner {
+    border-color: #1a1e30 !important;
+    border-top-color: #ff75a0 !important;
+}
+
+/* Toast Notifications */
+html.dark-theme .toast {
+    background: #141724 !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Footer Styling */
+html.dark-theme .footer {
+    background: #080910 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html.dark-theme .footer-box h2,
+html.dark-theme .footer-box h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .footer-box p,
+html.dark-theme .footer-links a,
+html.dark-theme .copyright {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .footer-links a:hover {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .social-icons a {
+    background: #141724 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .social-icons a:hover {
+    background: #ff5ea8 !important;
+    color: #fff !important;
+}
+
+/*======================================================
+   SUPPORT & LEGAL PAGES COMPREHENSIVE DARK THEME
+======================================================*/
+
+html.dark-theme .support-hero {
+    background: radial-gradient(circle at 50% 20%, #1a1628 0%, #0c0e17 70%) !important;
+}
+
+html.dark-theme .support-hero h1 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .support-hero p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .support-hero-badge {
+    background: rgba(214, 51, 132, 0.15) !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 117, 160, 0.3) !important;
+}
+
+html.dark-theme .support-hero-meta {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .support-search-input {
+    background: #181c2e !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .support-search-input:focus {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 0 20px rgba(214, 51, 132, 0.35) !important;
+}
+
+html.dark-theme .support-doc-section,
+html.dark-theme .help-categories-section,
+html.dark-theme .faq-accordion-section {
+    background: #0c0e17 !important;
+}
+
+html.dark-theme .doc-nav-card,
+html.dark-theme .doc-content-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45) !important;
+}
+
+html.dark-theme .doc-nav-title {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .doc-nav-link {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .doc-nav-link:hover,
+html.dark-theme .doc-nav-link.active {
+    background: rgba(255, 117, 160, 0.15) !important;
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .doc-nav-badge {
+    background: rgba(255, 117, 160, 0.15) !important;
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .doc-section {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .doc-section h2 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .doc-section p,
+html.dark-theme .doc-section ul li {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .doc-callout {
+    background: #181c2e !important;
+    border-left-color: #ff75a0 !important;
+}
+
+html.dark-theme .doc-callout h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .doc-callout p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .doc-callout-warning {
+    background: #1e1b24 !important;
+    border-left-color: #f59e0b !important;
+}
+
+html.dark-theme .doc-callout-warning h4 {
+    color: #fbbf24 !important;
+}
+
+html.dark-theme .doc-callout-danger {
+    background: #24161b !important;
+    border-left-color: #ef4444 !important;
+}
+
+html.dark-theme .doc-callout-danger h4 {
+    color: #f87171 !important;
+}
+
+html.dark-theme .help-cat-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .help-cat-card:hover {
+    background: #181c2e !important;
+    border-color: #ff75a0 !important;
+    box-shadow: 0 16px 35px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .help-cat-icon {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .help-cat-card h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .help-cat-card p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .faq-section-title h2 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .faq-section-title p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .faq-item {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .faq-item.active {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .faq-question {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .faq-question:hover {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .faq-icon-arrow {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .faq-item.active .faq-icon-arrow {
+    background: #d63384 !important;
+    color: #ffffff !important;
+}
+
+html.dark-theme .faq-answer {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .support-contact-cta {
+    background: linear-gradient(135deg, #181c2e, #141724) !important;
+    border: 1px solid rgba(255, 117, 160, 0.25) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .support-contact-cta h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .support-contact-cta p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .safety-rule-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .safety-rule-card:hover {
+    border-color: #ff75a0 !important;
+    box-shadow: 0 16px 35px rgba(214, 51, 132, 0.2) !important;
+}
+
+html.dark-theme .safety-card-badge {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .safety-rule-card h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .safety-rule-card p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .red-flags-card {
+    background: #1a1622 !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .red-flags-header h3 {
+    color: #fbbf24 !important;
+}
+
+html.dark-theme .red-flag-item {
+    background: #231c26 !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+}
+
+html.dark-theme .red-flag-text {
+    color: #fef3c7 !important;
+}
+
+html.dark-theme .reporting-step-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .reporting-step-card h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .reporting-step-card p {
+    color: #94a3b8 !important;
+}
+
+/* Compact Support Elements */
+html.dark-theme .support-tabs-bar {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .support-tab-btn {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .support-tab-btn:hover {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .support-tab-btn.active {
+    background: linear-gradient(135deg, #ff5ea8, #d63384) !important;
+    color: #ffffff !important;
+}
+
+html.dark-theme .compact-card {
+    background: #141724 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .compact-card:hover {
+    background: #181c2e !important;
+    border-color: rgba(255, 117, 160, 0.35) !important;
+}
+
+html.dark-theme .compact-card-icon {
+    background: #1a1e30 !important;
+    color: #ff75a0 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .compact-card-header h3 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .compact-card p,
+html.dark-theme .compact-card-list li {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .compact-card-list li::before {
+    color: #ff75a0 !important;
+}
+
+html.dark-theme .compact-callout {
+    background: #181c2e !important;
+    border-left-color: #ff75a0 !important;
+}
+
+html.dark-theme .compact-callout.warning {
+    background: #1e1b24 !important;
+    border-left-color: #f59e0b !important;
+}
+
+html.dark-theme .compact-callout.danger {
+    background: #24161b !important;
+    border-left-color: #ef4444 !important;
+}
+
+html.dark-theme .compact-callout h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .compact-callout p {
+    color: #94a3b8 !important;
+}
+
+html.dark-theme .help-chip {
+    background: #141724 !important;
+    color: #94a3b8 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark-theme .help-chip:hover {
+    color: #ff75a0 !important;
+    border-color: #ff75a0 !important;
+}
+
+html.dark-theme .help-chip.active {
+    background: #d63384 !important;
+    color: #ffffff !important;
+}
+
+html.dark-theme .compact-red-flags {
+    background: #1a1622 !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+html.dark-theme .compact-red-flags-header h3 {
+    color: #fbbf24 !important;
+}
+
+html.dark-theme .compact-flag-item {
+    background: #231c26 !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+    color: #fef3c7 !important;
+}
+
+html.dark-theme .compact-action-banner {
+    background: linear-gradient(135deg, #181c2e, #141724) !important;
+    border: 1px solid rgba(255, 117, 160, 0.25) !important;
+}
+
+html.dark-theme .compact-action-text h4 {
+    color: #f8fafc !important;
+}
+
+html.dark-theme .compact-action-text p {
+    color: #94a3b8 !important;
+}
+
+
